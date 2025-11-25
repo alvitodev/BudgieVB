@@ -33,6 +33,7 @@ Partial Class frmMain
         btnAddTransaction = New Button()
         TableLayoutPanel1 = New TableLayoutPanel()
         Panel3 = New Panel()
+        Label1 = New Label()
         chartPie = New ScottPlot.WinForms.FormsPlot()
         chartLine = New ScottPlot.WinForms.FormsPlot()
         lblNetWorthDashboard = New Label()
@@ -63,7 +64,6 @@ Partial Class frmMain
         flpDaftarGoal = New FlowLayoutPanel()
         Panel2 = New Panel()
         btnAddGoal = New Button()
-        Label1 = New Label()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
@@ -139,15 +139,18 @@ Partial Class frmMain
         ' 
         ' TabControl1
         ' 
+        TabControl1.Appearance = TabAppearance.FlatButtons
         TabControl1.Controls.Add(TabPage1)
         TabControl1.Controls.Add(TabPage2)
         TabControl1.Controls.Add(TabPage3)
         TabControl1.Controls.Add(TabPage4)
         TabControl1.Dock = DockStyle.Fill
+        TabControl1.ItemSize = New Size(0, 1)
         TabControl1.Location = New Point(0, 50)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
         TabControl1.Size = New Size(1262, 623)
+        TabControl1.SizeMode = TabSizeMode.Fixed
         TabControl1.TabIndex = 2
         ' 
         ' TabPage1
@@ -156,10 +159,10 @@ Partial Class frmMain
         TabPage1.Controls.Add(TableLayoutPanel1)
         TabPage1.Controls.Add(flpBudgetDashboard)
         TabPage1.Controls.Add(flpAkun)
-        TabPage1.Location = New Point(4, 29)
+        TabPage1.Location = New Point(4, 5)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1254, 590)
+        TabPage1.Size = New Size(1254, 614)
         TabPage1.TabIndex = 0
         TabPage1.Text = "TabPage1"
         TabPage1.UseVisualStyleBackColor = True
@@ -170,9 +173,9 @@ Partial Class frmMain
         btnAddTransaction.BackColor = Color.CornflowerBlue
         btnAddTransaction.FlatAppearance.BorderSize = 0
         btnAddTransaction.FlatStyle = FlatStyle.Flat
-        btnAddTransaction.Font = New Font("Segoe UI", 24.0F, FontStyle.Regular, GraphicsUnit.Point, 0)
+        btnAddTransaction.Font = New Font("Segoe UI", 24.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnAddTransaction.ForeColor = Color.White
-        btnAddTransaction.Location = New Point(1154, 493)
+        btnAddTransaction.Location = New Point(1154, 517)
         btnAddTransaction.Name = "btnAddTransaction"
         btnAddTransaction.Size = New Size(76, 71)
         btnAddTransaction.TabIndex = 4
@@ -192,7 +195,7 @@ Partial Class frmMain
         TableLayoutPanel1.RowCount = 2
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50.0F))
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20.0F))
-        TableLayoutPanel1.Size = New Size(1248, 340)
+        TableLayoutPanel1.Size = New Size(1248, 364)
         TableLayoutPanel1.TabIndex = 7
         ' 
         ' Panel3
@@ -205,29 +208,38 @@ Partial Class frmMain
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(3, 3)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(618, 314)
+        Panel3.Size = New Size(618, 338)
         Panel3.TabIndex = 0
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(226, 133)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(84, 20)
+        Label1.TabIndex = 4
+        Label1.Text = "Net Worth: "
         ' 
         ' chartPie
         ' 
         chartPie.DisplayScale = 1.25F
-        chartPie.Location = New Point(351, 199)
+        chartPie.Location = New Point(294, 170)
         chartPie.Name = "chartPie"
-        chartPie.Size = New Size(319, 265)
+        chartPie.Size = New Size(321, 165)
         chartPie.TabIndex = 3
         ' 
         ' chartLine
         ' 
         chartLine.DisplayScale = 1.25F
-        chartLine.Location = New Point(15, 199)
+        chartLine.Location = New Point(3, 156)
         chartLine.Name = "chartLine"
-        chartLine.Size = New Size(291, 240)
+        chartLine.Size = New Size(285, 179)
         chartLine.TabIndex = 2
         ' 
         ' lblNetWorthDashboard
         ' 
         lblNetWorthDashboard.AutoSize = True
-        lblNetWorthDashboard.Location = New Point(316, 159)
+        lblNetWorthDashboard.Location = New Point(333, 133)
         lblNetWorthDashboard.Name = "lblNetWorthDashboard"
         lblNetWorthDashboard.Size = New Size(53, 20)
         lblNetWorthDashboard.TabIndex = 1
@@ -251,7 +263,7 @@ Partial Class frmMain
         Panel4.Dock = DockStyle.Fill
         Panel4.Location = New Point(627, 3)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(618, 314)
+        Panel4.Size = New Size(618, 338)
         Panel4.TabIndex = 1
         ' 
         ' pnlFilterHeader
@@ -295,7 +307,7 @@ Partial Class frmMain
         ' btnViewAllTrans
         ' 
         btnViewAllTrans.Dock = DockStyle.Bottom
-        btnViewAllTrans.Location = New Point(0, 285)
+        btnViewAllTrans.Location = New Point(0, 309)
         btnViewAllTrans.Name = "btnViewAllTrans"
         btnViewAllTrans.Size = New Size(618, 29)
         btnViewAllTrans.TabIndex = 1
@@ -309,7 +321,7 @@ Partial Class frmMain
         flpRecentTrans.FlowDirection = FlowDirection.TopDown
         flpRecentTrans.Location = New Point(0, 0)
         flpRecentTrans.Name = "flpRecentTrans"
-        flpRecentTrans.Size = New Size(618, 314)
+        flpRecentTrans.Size = New Size(618, 338)
         flpRecentTrans.TabIndex = 3
         flpRecentTrans.WrapContents = False
         ' 
@@ -337,10 +349,10 @@ Partial Class frmMain
         ' 
         TabPage2.Controls.Add(flpListTransaksi)
         TabPage2.Controls.Add(pnlHeaderTransaksi)
-        TabPage2.Location = New Point(4, 29)
+        TabPage2.Location = New Point(4, 5)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1414, 792)
+        TabPage2.Size = New Size(1254, 614)
         TabPage2.TabIndex = 1
         TabPage2.Text = "TabPage2"
         TabPage2.UseVisualStyleBackColor = True
@@ -352,7 +364,7 @@ Partial Class frmMain
         flpListTransaksi.FlowDirection = FlowDirection.TopDown
         flpListTransaksi.Location = New Point(3, 123)
         flpListTransaksi.Name = "flpListTransaksi"
-        flpListTransaksi.Size = New Size(1408, 666)
+        flpListTransaksi.Size = New Size(1248, 488)
         flpListTransaksi.TabIndex = 1
         flpListTransaksi.WrapContents = False
         ' 
@@ -367,13 +379,13 @@ Partial Class frmMain
         pnlHeaderTransaksi.Dock = DockStyle.Top
         pnlHeaderTransaksi.Location = New Point(3, 3)
         pnlHeaderTransaksi.Name = "pnlHeaderTransaksi"
-        pnlHeaderTransaksi.Size = New Size(1408, 120)
+        pnlHeaderTransaksi.Size = New Size(1248, 120)
         pnlHeaderTransaksi.TabIndex = 0
         ' 
         ' lblTotalMonth
         ' 
         lblTotalMonth.AutoSize = True
-        lblTotalMonth.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        lblTotalMonth.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTotalMonth.Location = New Point(853, 82)
         lblTotalMonth.Name = "lblTotalMonth"
         lblTotalMonth.Size = New Size(78, 20)
@@ -403,7 +415,7 @@ Partial Class frmMain
         ' lblBulanTahun
         ' 
         lblBulanTahun.AutoSize = True
-        lblBulanTahun.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        lblBulanTahun.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblBulanTahun.Location = New Point(522, 37)
         lblBulanTahun.Name = "lblBulanTahun"
         lblBulanTahun.Size = New Size(184, 31)
@@ -432,10 +444,10 @@ Partial Class frmMain
         ' 
         TabPage3.Controls.Add(flpDaftarBudget)
         TabPage3.Controls.Add(pnlFooterAnggaran)
-        TabPage3.Location = New Point(4, 29)
+        TabPage3.Location = New Point(4, 5)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1414, 792)
+        TabPage3.Size = New Size(1254, 614)
         TabPage3.TabIndex = 2
         TabPage3.Text = "TabPage3"
         TabPage3.UseVisualStyleBackColor = True
@@ -446,16 +458,16 @@ Partial Class frmMain
         flpDaftarBudget.Dock = DockStyle.Fill
         flpDaftarBudget.Location = New Point(3, 3)
         flpDaftarBudget.Name = "flpDaftarBudget"
-        flpDaftarBudget.Size = New Size(1408, 726)
+        flpDaftarBudget.Size = New Size(1248, 548)
         flpDaftarBudget.TabIndex = 1
         ' 
         ' pnlFooterAnggaran
         ' 
         pnlFooterAnggaran.Controls.Add(btnAddBudget)
         pnlFooterAnggaran.Dock = DockStyle.Bottom
-        pnlFooterAnggaran.Location = New Point(3, 729)
+        pnlFooterAnggaran.Location = New Point(3, 551)
         pnlFooterAnggaran.Name = "pnlFooterAnggaran"
-        pnlFooterAnggaran.Size = New Size(1408, 60)
+        pnlFooterAnggaran.Size = New Size(1248, 60)
         pnlFooterAnggaran.TabIndex = 0
         ' 
         ' btnAddBudget
@@ -471,10 +483,10 @@ Partial Class frmMain
         ' 
         TabPage4.Controls.Add(flpDaftarGoal)
         TabPage4.Controls.Add(Panel2)
-        TabPage4.Location = New Point(4, 29)
+        TabPage4.Location = New Point(4, 5)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1254, 590)
+        TabPage4.Size = New Size(1254, 614)
         TabPage4.TabIndex = 3
         TabPage4.Text = "TabPage4"
         TabPage4.UseVisualStyleBackColor = True
@@ -485,14 +497,14 @@ Partial Class frmMain
         flpDaftarGoal.Dock = DockStyle.Fill
         flpDaftarGoal.Location = New Point(3, 3)
         flpDaftarGoal.Name = "flpDaftarGoal"
-        flpDaftarGoal.Size = New Size(1248, 524)
+        flpDaftarGoal.Size = New Size(1248, 548)
         flpDaftarGoal.TabIndex = 1
         ' 
         ' Panel2
         ' 
         Panel2.Controls.Add(btnAddGoal)
         Panel2.Dock = DockStyle.Bottom
-        Panel2.Location = New Point(3, 527)
+        Panel2.Location = New Point(3, 551)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1248, 60)
         Panel2.TabIndex = 0
@@ -505,15 +517,6 @@ Partial Class frmMain
         btnAddGoal.TabIndex = 1
         btnAddGoal.Text = "+ Goal"
         btnAddGoal.UseVisualStyleBackColor = True
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(203, 159)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(84, 20)
-        Label1.TabIndex = 4
-        Label1.Text = "Net Worth: "
         ' 
         ' frmMain
         ' 
