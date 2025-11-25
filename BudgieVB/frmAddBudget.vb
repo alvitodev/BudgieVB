@@ -26,4 +26,6 @@ Public Class frmAddBudget
             MsgBox("Gagal simpan: " & ex.Message)
         End Try
     End Sub
+
+
 End Class

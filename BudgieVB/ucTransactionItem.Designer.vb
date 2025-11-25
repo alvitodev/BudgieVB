@@ -31,7 +31,9 @@ Partial Class ucTransactionItem
         ' 
         ' picIcon
         ' 
-        picIcon.Location = New Point(15, 16)
+        picIcon.BackColor = Color.DarkSlateGray
+        picIcon.Image = My.Resources.Resources.Ubuntu_logo_no_wordmark_solid_o_2022_svg
+        picIcon.Location = New Point(6, 5)
         picIcon.Name = "picIcon"
         picIcon.Size = New Size(40, 40)
         picIcon.TabIndex = 0
@@ -41,7 +43,7 @@ Partial Class ucTransactionItem
         ' 
         lblJudul.AutoSize = True
         lblJudul.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblJudul.Location = New Point(72, 22)
+        lblJudul.Location = New Point(57, 13)
         lblJudul.Name = "lblJudul"
         lblJudul.Size = New Size(63, 23)
         lblJudul.TabIndex = 1
@@ -51,7 +53,7 @@ Partial Class ucTransactionItem
         ' 
         lblAmount.AutoSize = True
         lblAmount.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblAmount.Location = New Point(256, 22)
+        lblAmount.Location = New Point(407, 13)
         lblAmount.Name = "lblAmount"
         lblAmount.Size = New Size(63, 23)
         lblAmount.TabIndex = 3
@@ -62,22 +64,22 @@ Partial Class ucTransactionItem
         ' 
         Panel1.BackColor = Color.LightGray
         Panel1.Dock = DockStyle.Bottom
-        Panel1.Location = New Point(0, 69)
+        Panel1.Location = New Point(0, 49)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(350, 1)
+        Panel1.Size = New Size(650, 1)
         Panel1.TabIndex = 4
         ' 
         ' ucTransactionItem
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.Azure
         Controls.Add(Panel1)
         Controls.Add(lblAmount)
         Controls.Add(lblJudul)
         Controls.Add(picIcon)
         Name = "ucTransactionItem"
-        Size = New Size(350, 70)
+        Size = New Size(650, 50)
         CType(picIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

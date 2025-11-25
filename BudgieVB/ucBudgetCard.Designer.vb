@@ -32,16 +32,17 @@ Partial Class ucBudgetCard
         ' lblNama
         ' 
         lblNama.AutoSize = True
-        lblNama.Location = New Point(43, 19)
+        lblNama.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblNama.Location = New Point(10, 6)
         lblNama.Name = "lblNama"
-        lblNama.Size = New Size(53, 20)
+        lblNama.Size = New Size(73, 28)
         lblNama.TabIndex = 0
         lblNama.Text = "Makan"
         ' 
         ' lblSisa
         ' 
         lblSisa.AutoSize = True
-        lblSisa.Location = New Point(93, 47)
+        lblSisa.Location = New Point(10, 66)
         lblSisa.Name = "lblSisa"
         lblSisa.Size = New Size(112, 20)
         lblSisa.TabIndex = 1
@@ -51,9 +52,9 @@ Partial Class ucBudgetCard
         ' 
         pnlBackground.BackColor = Color.LightGray
         pnlBackground.Controls.Add(pnlProgress)
-        pnlBackground.Location = New Point(3, 70)
+        pnlBackground.Location = New Point(14, 37)
         pnlBackground.Name = "pnlBackground"
-        pnlBackground.Size = New Size(280, 10)
+        pnlBackground.Size = New Size(306, 24)
         pnlBackground.TabIndex = 2
         ' 
         ' pnlProgress
@@ -62,18 +63,19 @@ Partial Class ucBudgetCard
         pnlProgress.Dock = DockStyle.Left
         pnlProgress.Location = New Point(0, 0)
         pnlProgress.Name = "pnlProgress"
-        pnlProgress.Size = New Size(50, 10)
+        pnlProgress.Size = New Size(50, 24)
         pnlProgress.TabIndex = 0
         ' 
         ' ucBudgetCard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.ControlLightLight
         Controls.Add(pnlBackground)
         Controls.Add(lblSisa)
         Controls.Add(lblNama)
         Name = "ucBudgetCard"
-        Size = New Size(300, 100)
+        Size = New Size(336, 93)
         pnlBackground.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()

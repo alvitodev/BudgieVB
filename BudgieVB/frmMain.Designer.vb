@@ -206,12 +206,12 @@ Partial Class Budgie
         TableLayoutPanel1.Controls.Add(Panel3, 0, 0)
         TableLayoutPanel1.Controls.Add(Panel4, 1, 0)
         TableLayoutPanel1.Dock = DockStyle.Fill
-        TableLayoutPanel1.Location = New Point(3, 208)
+        TableLayoutPanel1.Location = New Point(3, 197)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 2
         TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel1.Size = New Size(1248, 403)
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 8F))
+        TableLayoutPanel1.Size = New Size(1248, 414)
         TableLayoutPanel1.TabIndex = 7
         ' 
         ' Panel3
@@ -225,7 +225,7 @@ Partial Class Budgie
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(3, 3)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(618, 377)
+        Panel3.Size = New Size(618, 400)
         Panel3.TabIndex = 0
         ' 
         ' Label1
@@ -244,7 +244,7 @@ Partial Class Budgie
         chartPie.DisplayScale = 1.25F
         chartPie.Location = New Point(313, 195)
         chartPie.Name = "chartPie"
-        chartPie.Size = New Size(302, 179)
+        chartPie.Size = New Size(302, 201)
         chartPie.TabIndex = 3
         ' 
         ' chartLine
@@ -252,7 +252,7 @@ Partial Class Budgie
         chartLine.DisplayScale = 1.25F
         chartLine.Location = New Point(3, 195)
         chartLine.Name = "chartLine"
-        chartLine.Size = New Size(307, 179)
+        chartLine.Size = New Size(307, 201)
         chartLine.TabIndex = 2
         ' 
         ' lblNetWorthDashboard
@@ -285,7 +285,7 @@ Partial Class Budgie
         Panel4.Dock = DockStyle.Fill
         Panel4.Location = New Point(627, 3)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(618, 377)
+        Panel4.Size = New Size(618, 400)
         Panel4.TabIndex = 1
         ' 
         ' pnlFilterHeader
@@ -341,7 +341,7 @@ Partial Class Budgie
         ' 
         btnViewAllTrans.Dock = DockStyle.Bottom
         btnViewAllTrans.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnViewAllTrans.Location = New Point(0, 348)
+        btnViewAllTrans.Location = New Point(0, 371)
         btnViewAllTrans.Name = "btnViewAllTrans"
         btnViewAllTrans.Size = New Size(618, 29)
         btnViewAllTrans.TabIndex = 1
@@ -356,7 +356,7 @@ Partial Class Budgie
         flpRecentTrans.FlowDirection = FlowDirection.TopDown
         flpRecentTrans.Location = New Point(0, 0)
         flpRecentTrans.Name = "flpRecentTrans"
-        flpRecentTrans.Size = New Size(618, 377)
+        flpRecentTrans.Size = New Size(618, 400)
         flpRecentTrans.TabIndex = 3
         flpRecentTrans.WrapContents = False
         ' 
@@ -365,9 +365,9 @@ Partial Class Budgie
         flpBudgetDashboard.AutoScroll = True
         flpBudgetDashboard.BackColor = Color.Honeydew
         flpBudgetDashboard.Dock = DockStyle.Top
-        flpBudgetDashboard.Location = New Point(3, 78)
+        flpBudgetDashboard.Location = New Point(3, 103)
         flpBudgetDashboard.Name = "flpBudgetDashboard"
-        flpBudgetDashboard.Size = New Size(1248, 130)
+        flpBudgetDashboard.Size = New Size(1248, 94)
         flpBudgetDashboard.TabIndex = 6
         flpBudgetDashboard.WrapContents = False
         ' 
@@ -378,7 +378,7 @@ Partial Class Budgie
         flpAkun.Dock = DockStyle.Top
         flpAkun.Location = New Point(3, 3)
         flpAkun.Name = "flpAkun"
-        flpAkun.Size = New Size(1248, 75)
+        flpAkun.Size = New Size(1248, 100)
         flpAkun.TabIndex = 5
         flpAkun.WrapContents = False
         ' 
@@ -397,6 +397,7 @@ Partial Class Budgie
         ' flpListTransaksi
         ' 
         flpListTransaksi.AutoScroll = True
+        flpListTransaksi.BackColor = Color.Azure
         flpListTransaksi.Dock = DockStyle.Fill
         flpListTransaksi.FlowDirection = FlowDirection.TopDown
         flpListTransaksi.Location = New Point(3, 123)
@@ -407,6 +408,7 @@ Partial Class Budgie
         ' 
         ' pnlHeaderTransaksi
         ' 
+        pnlHeaderTransaksi.BackColor = Color.Honeydew
         pnlHeaderTransaksi.Controls.Add(lblTotalMonth)
         pnlHeaderTransaksi.Controls.Add(lblExpMonth)
         pnlHeaderTransaksi.Controls.Add(lblIncMonth)
@@ -422,60 +424,70 @@ Partial Class Budgie
         ' lblTotalMonth
         ' 
         lblTotalMonth.AutoSize = True
-        lblTotalMonth.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblTotalMonth.Location = New Point(853, 82)
+        lblTotalMonth.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        lblTotalMonth.Location = New Point(792, 82)
         lblTotalMonth.Name = "lblTotalMonth"
-        lblTotalMonth.Size = New Size(78, 20)
+        lblTotalMonth.Size = New Size(98, 28)
         lblTotalMonth.TabIndex = 5
         lblTotalMonth.Text = "Total/Sisa"
+        lblTotalMonth.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' lblExpMonth
         ' 
         lblExpMonth.AutoSize = True
+        lblExpMonth.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         lblExpMonth.ForeColor = Color.Red
-        lblExpMonth.Location = New Point(578, 82)
+        lblExpMonth.Location = New Point(568, 82)
         lblExpMonth.Name = "lblExpMonth"
-        lblExpMonth.Size = New Size(90, 20)
+        lblExpMonth.Size = New Size(125, 28)
         lblExpMonth.TabIndex = 4
         lblExpMonth.Text = "Pengeluaran"
+        lblExpMonth.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lblIncMonth
         ' 
         lblIncMonth.AutoSize = True
+        lblIncMonth.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         lblIncMonth.ForeColor = Color.Green
-        lblIncMonth.Location = New Point(323, 92)
+        lblIncMonth.Location = New Point(348, 82)
         lblIncMonth.Name = "lblIncMonth"
-        lblIncMonth.Size = New Size(82, 20)
+        lblIncMonth.Size = New Size(116, 28)
         lblIncMonth.TabIndex = 3
         lblIncMonth.Text = "Pemasukan"
+        lblIncMonth.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' lblBulanTahun
         ' 
         lblBulanTahun.AutoSize = True
-        lblBulanTahun.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblBulanTahun.Location = New Point(522, 37)
+        lblBulanTahun.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblBulanTahun.Location = New Point(525, 29)
         lblBulanTahun.Name = "lblBulanTahun"
-        lblBulanTahun.Size = New Size(184, 31)
+        lblBulanTahun.Size = New Size(227, 38)
         lblBulanTahun.TabIndex = 2
         lblBulanTahun.Text = "November 2025"
         ' 
         ' btnNextMonth
         ' 
-        btnNextMonth.Location = New Point(853, 37)
+        btnNextMonth.BackColor = Color.White
+        btnNextMonth.FlatStyle = FlatStyle.System
+        btnNextMonth.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        btnNextMonth.Location = New Point(792, 23)
         btnNextMonth.Name = "btnNextMonth"
-        btnNextMonth.Size = New Size(94, 29)
+        btnNextMonth.Size = New Size(94, 52)
         btnNextMonth.TabIndex = 1
-        btnNextMonth.Text = ">"
-        btnNextMonth.UseVisualStyleBackColor = True
+        btnNextMonth.Text = "▶"
+        btnNextMonth.UseVisualStyleBackColor = False
         ' 
         ' btnPrevMonth
         ' 
-        btnPrevMonth.Location = New Point(370, 39)
+        btnPrevMonth.BackColor = Color.White
+        btnPrevMonth.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        btnPrevMonth.Location = New Point(370, 23)
         btnPrevMonth.Name = "btnPrevMonth"
-        btnPrevMonth.Size = New Size(94, 29)
+        btnPrevMonth.Size = New Size(94, 52)
         btnPrevMonth.TabIndex = 0
-        btnPrevMonth.Text = "<"
-        btnPrevMonth.UseVisualStyleBackColor = True
+        btnPrevMonth.Text = "◀"
+        btnPrevMonth.UseVisualStyleBackColor = False
         ' 
         ' TabPage3
         ' 
@@ -492,6 +504,7 @@ Partial Class Budgie
         ' flpDaftarBudget
         ' 
         flpDaftarBudget.AutoScroll = True
+        flpDaftarBudget.BackColor = Color.Beige
         flpDaftarBudget.Dock = DockStyle.Fill
         flpDaftarBudget.Location = New Point(3, 3)
         flpDaftarBudget.Name = "flpDaftarBudget"
@@ -509,7 +522,7 @@ Partial Class Budgie
         ' 
         ' btnAddBudget
         ' 
-        btnAddBudget.Location = New Point(618, 15)
+        btnAddBudget.Location = New Point(593, 16)
         btnAddBudget.Name = "btnAddBudget"
         btnAddBudget.Size = New Size(94, 29)
         btnAddBudget.TabIndex = 0

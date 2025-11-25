@@ -33,25 +33,27 @@ Partial Class ucGoalCard
         ' lblNama
         ' 
         lblNama.AutoSize = True
-        lblNama.Location = New Point(19, 15)
+        lblNama.Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblNama.Location = New Point(8, 12)
         lblNama.Name = "lblNama"
-        lblNama.Size = New Size(62, 20)
+        lblNama.Size = New Size(80, 25)
         lblNama.TabIndex = 0
         lblNama.Text = "Beli PS5"
         ' 
         ' lblTerkumpul
         ' 
         lblTerkumpul.AutoSize = True
-        lblTerkumpul.Location = New Point(117, 15)
+        lblTerkumpul.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTerkumpul.Location = New Point(106, 16)
         lblTerkumpul.Name = "lblTerkumpul"
-        lblTerkumpul.Size = New Size(180, 20)
+        lblTerkumpul.Size = New Size(183, 20)
         lblTerkumpul.TabIndex = 1
         lblTerkumpul.Text = "Rp 500.000 / Rp 5.000.000"
         ' 
         ' lblTanggal
         ' 
         lblTanggal.AutoSize = True
-        lblTanggal.Location = New Point(19, 64)
+        lblTanggal.Location = New Point(8, 73)
         lblTanggal.Name = "lblTanggal"
         lblTanggal.Size = New Size(138, 20)
         lblTanggal.TabIndex = 2
@@ -61,9 +63,9 @@ Partial Class ucGoalCard
         ' 
         pnlBackground.BackColor = Color.LightGray
         pnlBackground.Controls.Add(pnlProgress)
-        pnlBackground.Location = New Point(23, 37)
+        pnlBackground.Location = New Point(13, 45)
         pnlBackground.Name = "pnlBackground"
-        pnlBackground.Size = New Size(250, 24)
+        pnlBackground.Size = New Size(268, 24)
         pnlBackground.TabIndex = 3
         ' 
         ' pnlProgress
@@ -79,6 +81,7 @@ Partial Class ucGoalCard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.PaleTurquoise
         Controls.Add(pnlBackground)
         Controls.Add(lblTanggal)
         Controls.Add(lblTerkumpul)

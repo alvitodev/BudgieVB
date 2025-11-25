@@ -33,42 +33,47 @@ Partial Class frmAddBudget
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(199, 127)
+        Label1.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        Label1.Location = New Point(121, 20)
         Label1.Name = "Label1"
-        Label1.Size = New Size(118, 20)
+        Label1.Size = New Size(184, 31)
         Label1.TabIndex = 0
         Label1.Text = "Nama Anggaran"
         ' 
         ' txtNama
         ' 
-        txtNama.Location = New Point(192, 159)
+        txtNama.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        txtNama.Location = New Point(32, 67)
         txtNama.Name = "txtNama"
-        txtNama.Size = New Size(125, 27)
+        txtNama.Size = New Size(357, 38)
         txtNama.TabIndex = 1
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(216, 255)
+        Label2.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        Label2.Location = New Point(135, 132)
         Label2.Name = "Label2"
-        Label2.Size = New Size(95, 20)
+        Label2.Size = New Size(148, 31)
         Label2.TabIndex = 2
         Label2.Text = "Batas Rupiah"
         ' 
         ' numLimit
         ' 
-        numLimit.Location = New Point(183, 295)
+        numLimit.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        numLimit.Location = New Point(32, 183)
         numLimit.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         numLimit.Name = "numLimit"
-        numLimit.Size = New Size(200, 27)
+        numLimit.Size = New Size(357, 38)
         numLimit.TabIndex = 3
         numLimit.ThousandsSeparator = True
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(664, 385)
+        btnSimpan.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSimpan.Location = New Point(141, 253)
         btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(94, 29)
+        btnSimpan.Size = New Size(135, 44)
         btnSimpan.TabIndex = 4
         btnSimpan.Text = "Simpan"
         btnSimpan.UseVisualStyleBackColor = True
@@ -77,7 +82,7 @@ Partial Class frmAddBudget
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(433, 321)
         Controls.Add(btnSimpan)
         Controls.Add(numLimit)
         Controls.Add(Label2)

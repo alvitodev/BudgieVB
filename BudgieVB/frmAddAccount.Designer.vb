@@ -37,79 +37,88 @@ Partial Class frmAddAccount
         ' lblnamaakun
         ' 
         lblnamaakun.AutoSize = True
-        lblnamaakun.Location = New Point(140, 72)
+        lblnamaakun.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        lblnamaakun.Location = New Point(52, 51)
         lblnamaakun.Name = "lblnamaakun"
-        lblnamaakun.Size = New Size(86, 20)
+        lblnamaakun.Size = New Size(135, 31)
         lblnamaakun.TabIndex = 0
         lblnamaakun.Text = "Nama Akun"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(145, 156)
+        Label1.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        Label1.Location = New Point(58, 121)
         Label1.Name = "Label1"
-        Label1.Size = New Size(84, 20)
+        Label1.Size = New Size(129, 31)
         Label1.TabIndex = 1
         Label1.Text = "Saldo Awal"
         ' 
         ' txtNama
         ' 
-        txtNama.Location = New Point(273, 98)
+        txtNama.Font = New Font("Segoe UI", 13.8F)
+        txtNama.Location = New Point(229, 44)
         txtNama.Name = "txtNama"
-        txtNama.Size = New Size(125, 27)
+        txtNama.Size = New Size(285, 38)
         txtNama.TabIndex = 2
         ' 
         ' numSaldo
         ' 
-        numSaldo.Location = New Point(257, 249)
+        numSaldo.Font = New Font("Segoe UI", 13.8F)
+        numSaldo.Location = New Point(228, 114)
         numSaldo.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         numSaldo.Name = "numSaldo"
-        numSaldo.Size = New Size(150, 27)
+        numSaldo.Size = New Size(286, 38)
         numSaldo.TabIndex = 3
         numSaldo.ThousandsSeparator = True
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(157, 291)
+        Label2.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        Label2.Location = New Point(59, 184)
         Label2.Name = "Label2"
-        Label2.Size = New Size(82, 20)
+        Label2.Size = New Size(128, 31)
         Label2.TabIndex = 4
         Label2.Text = "Mata Uang"
         ' 
         ' cmbCurrency
         ' 
         cmbCurrency.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbCurrency.Font = New Font("Segoe UI", 13.8F)
         cmbCurrency.FormattingEnabled = True
-        cmbCurrency.Location = New Point(228, 325)
+        cmbCurrency.Location = New Point(227, 176)
         cmbCurrency.Name = "cmbCurrency"
-        cmbCurrency.Size = New Size(151, 28)
+        cmbCurrency.Size = New Size(287, 39)
         cmbCurrency.TabIndex = 5
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(145, 368)
+        Label3.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold)
+        Label3.Location = New Point(43, 247)
         Label3.Name = "Label3"
-        Label3.Size = New Size(90, 20)
+        Label3.Size = New Size(144, 31)
         Label3.TabIndex = 6
         Label3.Text = "Warna Kartu"
         ' 
         ' btnWarna
         ' 
         btnWarna.BackColor = Color.CornflowerBlue
-        btnWarna.Location = New Point(260, 371)
+        btnWarna.Font = New Font("Segoe UI", 13.8F)
+        btnWarna.Location = New Point(227, 241)
         btnWarna.Name = "btnWarna"
-        btnWarna.Size = New Size(94, 29)
+        btnWarna.Size = New Size(287, 42)
         btnWarna.TabIndex = 7
         btnWarna.Text = "..."
         btnWarna.UseVisualStyleBackColor = False
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(579, 385)
+        btnSimpan.Font = New Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSimpan.Location = New Point(395, 309)
         btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(94, 29)
+        btnSimpan.Size = New Size(119, 43)
         btnSimpan.TabIndex = 8
         btnSimpan.Text = "Simpan"
         btnSimpan.UseVisualStyleBackColor = True
@@ -118,7 +127,7 @@ Partial Class frmAddAccount
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(562, 371)
         Controls.Add(btnSimpan)
         Controls.Add(btnWarna)
         Controls.Add(Label3)

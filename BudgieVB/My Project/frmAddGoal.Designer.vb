@@ -35,48 +35,54 @@ Partial Class frmAddGoal
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(108, 68)
+        Label1.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold)
+        Label1.Location = New Point(177, 26)
         Label1.Name = "Label1"
-        Label1.Size = New Size(94, 20)
+        Label1.Size = New Size(180, 38)
         Label1.TabIndex = 0
         Label1.Text = "Nama Target"
         ' 
         ' txtNama
         ' 
-        txtNama.Location = New Point(130, 167)
+        txtNama.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold)
+        txtNama.Location = New Point(45, 78)
         txtNama.Name = "txtNama"
-        txtNama.Size = New Size(125, 27)
+        txtNama.Size = New Size(463, 43)
         txtNama.TabIndex = 1
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(161, 226)
+        Label2.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold)
+        Label2.Location = New Point(141, 137)
         Label2.Name = "Label2"
-        Label2.Size = New Size(132, 20)
+        Label2.Size = New Size(254, 38)
         Label2.TabIndex = 2
         Label2.Text = "Jumlah Target (Rp)"
         ' 
         ' numTarget
         ' 
-        numTarget.Location = New Point(151, 311)
+        numTarget.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold)
+        numTarget.Location = New Point(45, 188)
         numTarget.Maximum = New Decimal(New Integer() {1000000000, 0, 0, 0})
         numTarget.Name = "numTarget"
-        numTarget.Size = New Size(150, 27)
+        numTarget.Size = New Size(463, 43)
         numTarget.TabIndex = 3
         ' 
         ' dtpTarget
         ' 
-        dtpTarget.Location = New Point(334, 364)
+        dtpTarget.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        dtpTarget.Location = New Point(45, 298)
         dtpTarget.Name = "dtpTarget"
-        dtpTarget.Size = New Size(250, 27)
+        dtpTarget.Size = New Size(463, 43)
         dtpTarget.TabIndex = 4
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(681, 397)
+        btnSimpan.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSimpan.Location = New Point(186, 360)
         btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(94, 29)
+        btnSimpan.Size = New Size(159, 51)
         btnSimpan.TabIndex = 5
         btnSimpan.Text = "Simpan"
         btnSimpan.UseVisualStyleBackColor = True
@@ -84,9 +90,10 @@ Partial Class frmAddGoal
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(413, 315)
+        Label3.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold)
+        Label3.Location = New Point(166, 250)
         Label3.Name = "Label3"
-        Label3.Size = New Size(108, 20)
+        Label3.Size = New Size(209, 38)
         Label3.TabIndex = 6
         Label3.Text = "Tenggat Waktu"
         ' 
@@ -94,7 +101,7 @@ Partial Class frmAddGoal
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(552, 427)
         Controls.Add(Label3)
         Controls.Add(btnSimpan)
         Controls.Add(dtpTarget)

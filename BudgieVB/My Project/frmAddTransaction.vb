@@ -65,9 +65,9 @@ Public Class frmAddTransaction
         dtpTanggal.Value = Date.Now
 
         ' Sembunyikan Header TabControl (Supaya user gak bisa klik tab sembarangan)
-        TabControl1.Appearance = TabAppearance.FlatButtons
-        TabControl1.ItemSize = New Size(0, 1)
-        TabControl1.SizeMode = TabSizeMode.Fixed
+        Nama.Appearance = TabAppearance.FlatButtons
+        Nama.ItemSize = New Size(0, 1)
+        Nama.SizeMode = TabSizeMode.Fixed
     End Sub
 
     ' --- LOGIC LOAD DATA ---
@@ -180,7 +180,7 @@ Public Class frmAddTransaction
             MsgBox("Isi judul dulu bro!")
             Exit Sub
         End If
-        TabControl1.SelectedIndex = 1 ' Pindah ke Tab Kategori
+        Nama.SelectedIndex = 1 ' Pindah ke Tab Kategori
     End Sub
 
     Private Sub btnNext2_Click(sender As Object, e As EventArgs) Handles btnNext2.Click
@@ -188,7 +188,7 @@ Public Class frmAddTransaction
             MsgBox("Pilih kategori dulu!")
             Exit Sub
         End If
-        TabControl1.SelectedIndex = 2 ' Pindah ke Tab Nominal
+        Nama.SelectedIndex = 2 ' Pindah ke Tab Nominal
     End Sub
 
     ' Logic Numpad (Hubungkan semua tombol angka 0-9 ke event ini)
