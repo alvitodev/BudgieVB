@@ -326,12 +326,29 @@ Public Class frmMain
                 Using CMD As New MySqlCommand(sqlItem, Conn)
                     CMD.Parameters.AddWithValue("@uid", CurrentUser_ID)
                     CMD.Parameters.AddWithValue("@tgl", tgl.ToString("yyyy-MM-dd"))
+
                     Using RDItem As MySqlDataReader = CMD.ExecuteReader
                         While RDItem.Read
                             Dim item As New ucTransactionItem
+
+                            ' --- PERBAIKAN DI SINI ---
+                            ' Ganti RD jadi RDItem
+                            item.TransactionID = RDItem("id")
+                            ' -------------------------
+
                             item.Judul = RDItem("note").ToString
                             item.Nominal = RDItem("amount")
                             item.Margin = New Padding(20, 0, 0, 0)
+
+                            ' --- LOGIC KLIK KANAN (Tetap sama) ---
+                            AddHandler item.MouseDown, Sub(sender As Object, e As MouseEventArgs)
+                                                           If e.Button = MouseButtons.Right Then
+                                                               cmsTransaksi.Tag = item.TransactionID
+                                                               cmsTransaksi.Show(Cursor.Position)
+                                                           End If
+                                                       End Sub
+                            ' -------------------------------------
+
                             flpListTransaksi.Controls.Add(item)
                         End While
                     End Using
@@ -341,6 +358,62 @@ Public Class frmMain
         Catch ex As Exception
             MsgBox("Error load transaksi: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub menuHapus_Click(sender As Object, e As EventArgs) Handles menuHapus.Click
+        ' Ambil ID dari Tag yang kita simpan tadi
+        If cmsTransaksi.Tag Is Nothing Then Exit Sub
+        Dim idTrans As Integer = CInt(cmsTransaksi.Tag)
+
+        If MsgBox("Yakin hapus transaksi ini? Saldo akan dikembalikan.", MsgBoxStyle.YesNo + MsgBoxStyle.Question) = MsgBoxResult.Yes Then
+            Try
+                BukaDB()
+
+                ' 1. Ambil Data Transaksi Dulu (Buat balikin saldo)
+                Dim nominal As Decimal = 0
+                Dim akunID As Integer = 0
+
+                Using cmdCek As New MySqlCommand("SELECT amount, account_id FROM transactions WHERE id=" & idTrans, Conn)
+                    Using rdCek As MySqlDataReader = cmdCek.ExecuteReader
+                        If rdCek.Read() Then
+                            nominal = rdCek("amount")
+                            akunID = rdCek("account_id")
+                        End If
+                    End Using
+                End Using
+
+                ' 2. Hapus Transaksi
+                Dim sqlDel As String = "DELETE FROM transactions WHERE id=" & idTrans
+                Using cmdDel As New MySqlCommand(sqlDel, Conn)
+                    cmdDel.ExecuteNonQuery()
+                End Using
+
+                ' 3. Kembalikan Saldo (Reverse Logic)
+                ' Kalau tadinya Pengeluaran (-50.000), kita kurangi saldo dengan -50.000? SALAH.
+                ' Rumus: SaldoBaru = SaldoLama - (NominalTransaksi)
+                ' Contoh Expense: 100.000 - (-50.000) = 150.000 (Uang balik).
+                ' Contoh Income: 100.000 - (50.000) = 50.000 (Uang ditarik).
+
+                Dim sqlRev As String = "UPDATE accounts SET balance = balance - @amt WHERE id = @acc"
+                Using cmdRev As New MySqlCommand(sqlRev, Conn)
+                    cmdRev.Parameters.AddWithValue("@amt", nominal)
+                    cmdRev.Parameters.AddWithValue("@acc", akunID)
+                    cmdRev.ExecuteNonQuery()
+                End Using
+
+                MsgBox("Terhapus!")
+
+                ' 4. Refresh Semua Halaman
+                frmMain_Activated(Nothing, Nothing)
+
+            Catch ex As Exception
+                MsgBox("Gagal hapus: " & ex.Message)
+            End Try
+        End If
+    End Sub
+    Private Sub btnViewAllTrans_Click(sender As Object, e As EventArgs) Handles btnViewAllTrans.Click
+        TabControl1.SelectedIndex = 1 ' Pindah ke Tab Transaksi
+        LoadHalamanTransaksi() ' Refresh data
     End Sub
 
     ' Fungsi Helper untuk hitung total per hari
@@ -484,11 +557,24 @@ Public Class frmMain
             CMD.Parameters.AddWithValue("@uid", CurrentUser_ID)
             Using RD As MySqlDataReader = CMD.ExecuteReader
                 While RD.Read
+
                     Dim item As New ucTransactionItem
+                    item.TransactionID = RD("id") ' <--- PENTING: Simpan ID
                     item.Judul = RD("note").ToString
                     item.Nominal = RD("amount")
 
-                    ' Masukkan ke Panel Baru
+                    ' --- LOGIC BARU: KLIK KANAN ---
+                    ' Saat item diklik kanan, simpan ID-nya ke Tag Menu Strip biar bisa diambil nanti
+                    AddHandler item.MouseDown, Sub(sender As Object, e As MouseEventArgs)
+                                                   If e.Button = MouseButtons.Right Then
+                                                       ' Simpan ID transaksi ke Tag milik ContextMenu
+                                                       cmsTransaksi.Tag = item.TransactionID
+                                                       ' Tampilkan menu di posisi mouse
+                                                       cmsTransaksi.Show(Cursor.Position)
+                                                   End If
+                                               End Sub
+                    ' -----------------------------
+
                     flpRecentTrans.Controls.Add(item)
                 End While
             End Using

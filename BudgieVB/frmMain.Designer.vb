@@ -22,6 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Panel1 = New Panel()
         btnLogout = New Button()
         btnNavGoals = New Button()
@@ -64,6 +65,8 @@ Partial Class frmMain
         flpDaftarGoal = New FlowLayoutPanel()
         Panel2 = New Panel()
         btnAddGoal = New Button()
+        cmsTransaksi = New ContextMenuStrip(components)
+        menuHapus = New ToolStripMenuItem()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
@@ -77,6 +80,7 @@ Partial Class frmMain
         pnlFooterAnggaran.SuspendLayout()
         TabPage4.SuspendLayout()
         Panel2.SuspendLayout()
+        cmsTransaksi.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -279,11 +283,12 @@ Partial Class frmMain
         ' 
         ' btnFilterInc
         ' 
+        btnFilterInc.ForeColor = Color.Green
         btnFilterInc.Location = New Point(242, 15)
         btnFilterInc.Name = "btnFilterInc"
         btnFilterInc.Size = New Size(94, 29)
         btnFilterInc.TabIndex = 1
-        btnFilterInc.Text = "Income"
+        btnFilterInc.Text = "▲ Income"
         btnFilterInc.UseVisualStyleBackColor = True
         ' 
         ' btnFilterAll
@@ -297,11 +302,12 @@ Partial Class frmMain
         ' 
         ' btnFilterExp
         ' 
+        btnFilterExp.ForeColor = Color.Red
         btnFilterExp.Location = New Point(404, 15)
         btnFilterExp.Name = "btnFilterExp"
         btnFilterExp.Size = New Size(94, 29)
         btnFilterExp.TabIndex = 2
-        btnFilterExp.Text = "Expense"
+        btnFilterExp.Text = "▼ Expense"
         btnFilterExp.UseVisualStyleBackColor = True
         ' 
         ' btnViewAllTrans
@@ -518,6 +524,19 @@ Partial Class frmMain
         btnAddGoal.Text = "+ Goal"
         btnAddGoal.UseVisualStyleBackColor = True
         ' 
+        ' cmsTransaksi
+        ' 
+        cmsTransaksi.ImageScalingSize = New Size(20, 20)
+        cmsTransaksi.Items.AddRange(New ToolStripItem() {menuHapus})
+        cmsTransaksi.Name = "cmsTransaksi"
+        cmsTransaksi.Size = New Size(184, 28)
+        ' 
+        ' menuHapus
+        ' 
+        menuHapus.Name = "menuHapus"
+        menuHapus.Size = New Size(183, 24)
+        menuHapus.Text = "Hapus Transaksi"
+        ' 
         ' frmMain
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
@@ -542,6 +561,7 @@ Partial Class frmMain
         pnlFooterAnggaran.ResumeLayout(False)
         TabPage4.ResumeLayout(False)
         Panel2.ResumeLayout(False)
+        cmsTransaksi.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -587,5 +607,7 @@ Partial Class frmMain
     Friend WithEvents pnlFilterHeader As Panel
     Friend WithEvents btnViewAllTrans As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents cmsTransaksi As ContextMenuStrip
+    Friend WithEvents menuHapus As ToolStripMenuItem
 
 End Class

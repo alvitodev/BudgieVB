@@ -24,8 +24,8 @@ Partial Class ucTransactionItem
     Private Sub InitializeComponent()
         picIcon = New PictureBox()
         lblJudul = New Label()
-        lblNote = New Label()
         lblAmount = New Label()
+        Panel1 = New Panel()
         CType(picIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -41,22 +41,11 @@ Partial Class ucTransactionItem
         ' 
         lblJudul.AutoSize = True
         lblJudul.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblJudul.Location = New Point(77, 16)
+        lblJudul.Location = New Point(72, 22)
         lblJudul.Name = "lblJudul"
         lblJudul.Size = New Size(63, 23)
         lblJudul.TabIndex = 1
         lblJudul.Text = "Label1"
-        ' 
-        ' lblNote
-        ' 
-        lblNote.AutoSize = True
-        lblNote.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblNote.ForeColor = Color.Gray
-        lblNote.Location = New Point(77, 39)
-        lblNote.Name = "lblNote"
-        lblNote.Size = New Size(46, 17)
-        lblNote.TabIndex = 2
-        lblNote.Text = "Label1"
         ' 
         ' lblAmount
         ' 
@@ -69,12 +58,22 @@ Partial Class ucTransactionItem
         lblAmount.Text = "Label1"
         lblAmount.TextAlign = ContentAlignment.MiddleRight
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.LightGray
+        Panel1.Dock = DockStyle.Bottom
+        Panel1.Location = New Point(0, 69)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(350, 1)
+        Panel1.TabIndex = 4
+        ' 
         ' ucTransactionItem
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.White
+        Controls.Add(Panel1)
         Controls.Add(lblAmount)
-        Controls.Add(lblNote)
         Controls.Add(lblJudul)
         Controls.Add(picIcon)
         Name = "ucTransactionItem"
@@ -86,7 +85,7 @@ Partial Class ucTransactionItem
 
     Friend WithEvents picIcon As PictureBox
     Friend WithEvents lblJudul As Label
-    Friend WithEvents lblNote As Label
     Friend WithEvents lblAmount As Label
+    Friend WithEvents Panel1 As Panel
 
 End Class

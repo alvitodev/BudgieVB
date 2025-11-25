@@ -28,6 +28,8 @@ Partial Class frmAddTransaction
         dtpTanggal = New DateTimePicker()
         txtJudul = New TextBox()
         TabPage2 = New TabPage()
+        btnModeIncome = New Button()
+        btnModeExpense = New Button()
         cmbGoal = New ComboBox()
         cmbBudget = New ComboBox()
         flpCategories = New FlowLayoutPanel()
@@ -47,8 +49,6 @@ Partial Class frmAddTransaction
         btnAngka1 = New Button()
         btnAngka0 = New Button()
         lblNominalDisplay = New Label()
-        btnModeExpense = New Button()
-        btnModeIncome = New Button()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -119,6 +119,28 @@ Partial Class frmAddTransaction
         TabPage2.Text = "TabPage2"
         TabPage2.UseVisualStyleBackColor = True
         ' 
+        ' btnModeIncome
+        ' 
+        btnModeIncome.BackColor = Color.WhiteSmoke
+        btnModeIncome.FlatStyle = FlatStyle.Flat
+        btnModeIncome.Location = New Point(278, 214)
+        btnModeIncome.Name = "btnModeIncome"
+        btnModeIncome.Size = New Size(94, 29)
+        btnModeIncome.TabIndex = 8
+        btnModeIncome.Text = "Income"
+        btnModeIncome.UseVisualStyleBackColor = False
+        ' 
+        ' btnModeExpense
+        ' 
+        btnModeExpense.BackColor = Color.Salmon
+        btnModeExpense.FlatStyle = FlatStyle.Flat
+        btnModeExpense.Location = New Point(124, 214)
+        btnModeExpense.Name = "btnModeExpense"
+        btnModeExpense.Size = New Size(94, 29)
+        btnModeExpense.TabIndex = 7
+        btnModeExpense.Text = "Expense"
+        btnModeExpense.UseVisualStyleBackColor = False
+        ' 
         ' cmbGoal
         ' 
         cmbGoal.FormattingEnabled = True
@@ -139,9 +161,9 @@ Partial Class frmAddTransaction
         ' 
         ' flpCategories
         ' 
-        flpCategories.Location = New Point(171, 90)
+        flpCategories.Location = New Point(37, 29)
         flpCategories.Name = "flpCategories"
-        flpCategories.Size = New Size(250, 125)
+        flpCategories.Size = New Size(700, 149)
         flpCategories.TabIndex = 4
         ' 
         ' btnNext2
@@ -301,28 +323,6 @@ Partial Class frmAddTransaction
         lblNominalDisplay.Size = New Size(25, 20)
         lblNominalDisplay.TabIndex = 0
         lblNominalDisplay.Text = "67"
-        ' 
-        ' btnModeExpense
-        ' 
-        btnModeExpense.BackColor = Color.Salmon
-        btnModeExpense.FlatStyle = FlatStyle.Flat
-        btnModeExpense.Location = New Point(37, 238)
-        btnModeExpense.Name = "btnModeExpense"
-        btnModeExpense.Size = New Size(94, 29)
-        btnModeExpense.TabIndex = 7
-        btnModeExpense.Text = "Expense"
-        btnModeExpense.UseVisualStyleBackColor = False
-        ' 
-        ' btnModeIncome
-        ' 
-        btnModeIncome.BackColor = Color.WhiteSmoke
-        btnModeIncome.FlatStyle = FlatStyle.Flat
-        btnModeIncome.Location = New Point(205, 238)
-        btnModeIncome.Name = "btnModeIncome"
-        btnModeIncome.Size = New Size(94, 29)
-        btnModeIncome.TabIndex = 8
-        btnModeIncome.Text = "Income"
-        btnModeIncome.UseVisualStyleBackColor = False
         ' 
         ' frmAddTransaction
         ' 

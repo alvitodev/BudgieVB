@@ -1,4 +1,5 @@
 ﻿Public Class ucTransactionItem
+    Public Property TransactionID As Integer = 0
     Public Property Judul As String
         Get
             Return lblJudul.Text
