@@ -70,4 +70,5 @@ Public Class frmRegister
         frm.Show()
         Me.Hide()
     End Sub
+
 End Class

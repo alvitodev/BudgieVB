@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports ScottPlot ' Wajib import namespace ScottPlot 5
 
-Public Class frmMain
+Public Class Budgie
     ' Variabel untuk menyimpan bulan yang sedang dilihat di tab Transaksi
     Dim ViewedDate As Date = Date.Now
     Dim CurrentDashboardFilter As String = "All" ' All, Income, Expense

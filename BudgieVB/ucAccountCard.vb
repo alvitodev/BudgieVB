@@ -24,4 +24,5 @@
             pnlBg.BackColor = Color.CornflowerBlue
         End Try
     End Sub
+
 End Class

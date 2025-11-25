@@ -38,7 +38,7 @@ Public Class frmLogin
                 MsgBox("Selamat Datang, " & namaUser & "!", MsgBoxStyle.Information)
 
                 ' Sekarang aman buka form baru karena koneksi sudah nganggur
-                Dim frm As New frmMain
+                Dim frm As New Budgie
                 frm.Show()
                 Me.Hide()
             Else
@@ -54,5 +54,13 @@ Public Class frmLogin
         Dim frm As New frmRegister
         frm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

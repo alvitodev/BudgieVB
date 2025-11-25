@@ -23,9 +23,9 @@ Partial Class ucAccountCard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         pnlBg = New Panel()
-        lblNama = New Label()
-        lblSaldo = New Label()
         lblCurrency = New Label()
+        lblSaldo = New Label()
+        lblNama = New Label()
         pnlBg.SuspendLayout()
         SuspendLayout()
         ' 
@@ -38,40 +38,41 @@ Partial Class ucAccountCard
         pnlBg.Dock = DockStyle.Fill
         pnlBg.Location = New Point(0, 0)
         pnlBg.Name = "pnlBg"
-        pnlBg.Size = New Size(200, 100)
+        pnlBg.Size = New Size(200, 75)
         pnlBg.TabIndex = 0
         ' 
-        ' lblNama
+        ' lblCurrency
         ' 
-        lblNama.AutoSize = True
-        lblNama.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblNama.ForeColor = Color.White
-        lblNama.Location = New Point(17, 14)
-        lblNama.Name = "lblNama"
-        lblNama.Size = New Size(57, 23)
-        lblNama.TabIndex = 0
-        lblNama.Text = "Nama"
+        lblCurrency.AutoSize = True
+        lblCurrency.ForeColor = Color.White
+        lblCurrency.Location = New Point(159, 8)
+        lblCurrency.Name = "lblCurrency"
+        lblCurrency.Size = New Size(33, 20)
+        lblCurrency.TabIndex = 2
+        lblCurrency.Text = "IDR"
+        lblCurrency.TextAlign = ContentAlignment.TopRight
         ' 
         ' lblSaldo
         ' 
         lblSaldo.AutoSize = True
         lblSaldo.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblSaldo.ForeColor = Color.White
-        lblSaldo.Location = New Point(17, 37)
+        lblSaldo.Location = New Point(9, 34)
         lblSaldo.Name = "lblSaldo"
         lblSaldo.Size = New Size(137, 28)
         lblSaldo.TabIndex = 1
         lblSaldo.Text = "Rp 1.000.000"
         ' 
-        ' lblCurrency
+        ' lblNama
         ' 
-        lblCurrency.AutoSize = True
-        lblCurrency.ForeColor = Color.White
-        lblCurrency.Location = New Point(17, 70)
-        lblCurrency.Name = "lblCurrency"
-        lblCurrency.Size = New Size(33, 20)
-        lblCurrency.TabIndex = 2
-        lblCurrency.Text = "IDR"
+        lblNama.AutoSize = True
+        lblNama.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblNama.ForeColor = Color.White
+        lblNama.Location = New Point(10, 10)
+        lblNama.Name = "lblNama"
+        lblNama.Size = New Size(57, 23)
+        lblNama.TabIndex = 0
+        lblNama.Text = "Nama"
         ' 
         ' ucAccountCard
         ' 
@@ -79,7 +80,7 @@ Partial Class ucAccountCard
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(pnlBg)
         Name = "ucAccountCard"
-        Size = New Size(200, 100)
+        Size = New Size(200, 75)
         pnlBg.ResumeLayout(False)
         pnlBg.PerformLayout()
         ResumeLayout(False)

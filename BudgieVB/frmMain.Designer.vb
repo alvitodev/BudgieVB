@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmMain
+Partial Class Budgie
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,6 +23,7 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Budgie))
         Panel1 = New Panel()
         btnLogout = New Button()
         btnNavGoals = New Button()
@@ -98,45 +99,57 @@ Partial Class frmMain
         ' 
         ' btnLogout
         ' 
-        btnLogout.Location = New Point(1014, 12)
+        btnLogout.BackColor = Color.MistyRose
+        btnLogout.Dock = DockStyle.Right
+        btnLogout.Location = New Point(1168, 0)
         btnLogout.Name = "btnLogout"
-        btnLogout.Size = New Size(94, 29)
+        btnLogout.Size = New Size(94, 50)
         btnLogout.TabIndex = 4
         btnLogout.Text = "Logout"
-        btnLogout.UseVisualStyleBackColor = True
+        btnLogout.UseVisualStyleBackColor = False
         ' 
         ' btnNavGoals
         ' 
-        btnNavGoals.Location = New Point(779, 12)
+        btnNavGoals.Dock = DockStyle.Left
+        btnNavGoals.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        btnNavGoals.Location = New Point(750, 0)
         btnNavGoals.Name = "btnNavGoals"
-        btnNavGoals.Size = New Size(94, 29)
+        btnNavGoals.Size = New Size(250, 50)
         btnNavGoals.TabIndex = 3
         btnNavGoals.Text = "Goals"
         btnNavGoals.UseVisualStyleBackColor = True
         ' 
         ' btnNavAnggaran
         ' 
-        btnNavAnggaran.Location = New Point(531, 3)
+        btnNavAnggaran.Dock = DockStyle.Left
+        btnNavAnggaran.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        btnNavAnggaran.Location = New Point(500, 0)
         btnNavAnggaran.Name = "btnNavAnggaran"
-        btnNavAnggaran.Size = New Size(94, 29)
+        btnNavAnggaran.Size = New Size(250, 50)
         btnNavAnggaran.TabIndex = 2
         btnNavAnggaran.Text = "Budget"
         btnNavAnggaran.UseVisualStyleBackColor = True
         ' 
         ' btnNavTransaksi
         ' 
-        btnNavTransaksi.Location = New Point(318, 12)
+        btnNavTransaksi.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        btnNavTransaksi.Dock = DockStyle.Left
+        btnNavTransaksi.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        btnNavTransaksi.Location = New Point(250, 0)
         btnNavTransaksi.Name = "btnNavTransaksi"
-        btnNavTransaksi.Size = New Size(94, 29)
+        btnNavTransaksi.Size = New Size(250, 50)
         btnNavTransaksi.TabIndex = 1
         btnNavTransaksi.Text = "Transaksi"
         btnNavTransaksi.UseVisualStyleBackColor = True
         ' 
         ' btnNavDashboard
         ' 
-        btnNavDashboard.Location = New Point(71, 12)
+        btnNavDashboard.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        btnNavDashboard.Dock = DockStyle.Left
+        btnNavDashboard.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnNavDashboard.Location = New Point(0, 0)
         btnNavDashboard.Name = "btnNavDashboard"
-        btnNavDashboard.Size = New Size(94, 29)
+        btnNavDashboard.Size = New Size(250, 50)
         btnNavDashboard.TabIndex = 0
         btnNavDashboard.Text = "Dashboard"
         btnNavDashboard.UseVisualStyleBackColor = True
@@ -176,10 +189,9 @@ Partial Class frmMain
         btnAddTransaction.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
         btnAddTransaction.BackColor = Color.CornflowerBlue
         btnAddTransaction.FlatAppearance.BorderSize = 0
-        btnAddTransaction.FlatStyle = FlatStyle.Flat
-        btnAddTransaction.Font = New Font("Segoe UI", 24.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAddTransaction.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddTransaction.ForeColor = Color.White
-        btnAddTransaction.Location = New Point(1154, 517)
+        btnAddTransaction.Location = New Point(1154, 523)
         btnAddTransaction.Name = "btnAddTransaction"
         btnAddTransaction.Size = New Size(76, 71)
         btnAddTransaction.TabIndex = 4
@@ -189,21 +201,22 @@ Partial Class frmMain
         ' TableLayoutPanel1
         ' 
         TableLayoutPanel1.ColumnCount = 2
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50.0F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.Controls.Add(Panel3, 0, 0)
         TableLayoutPanel1.Controls.Add(Panel4, 1, 0)
         TableLayoutPanel1.Dock = DockStyle.Fill
-        TableLayoutPanel1.Location = New Point(3, 247)
+        TableLayoutPanel1.Location = New Point(3, 208)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 2
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20.0F))
-        TableLayoutPanel1.Size = New Size(1248, 364)
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
+        TableLayoutPanel1.Size = New Size(1248, 403)
         TableLayoutPanel1.TabIndex = 7
         ' 
         ' Panel3
         ' 
+        Panel3.BackColor = Color.DarkSeaGreen
         Panel3.Controls.Add(Label1)
         Panel3.Controls.Add(chartPie)
         Panel3.Controls.Add(chartLine)
@@ -212,46 +225,51 @@ Partial Class frmMain
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(3, 3)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(618, 338)
+        Panel3.Size = New Size(618, 377)
         Panel3.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(226, 133)
+        Label1.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(15, 143)
         Label1.Name = "Label1"
-        Label1.Size = New Size(84, 20)
+        Label1.Size = New Size(160, 38)
         Label1.TabIndex = 4
         Label1.Text = "Net Worth: "
         ' 
         ' chartPie
         ' 
         chartPie.DisplayScale = 1.25F
-        chartPie.Location = New Point(294, 170)
+        chartPie.Location = New Point(313, 195)
         chartPie.Name = "chartPie"
-        chartPie.Size = New Size(321, 165)
+        chartPie.Size = New Size(302, 179)
         chartPie.TabIndex = 3
         ' 
         ' chartLine
         ' 
         chartLine.DisplayScale = 1.25F
-        chartLine.Location = New Point(3, 156)
+        chartLine.Location = New Point(3, 195)
         chartLine.Name = "chartLine"
-        chartLine.Size = New Size(285, 179)
+        chartLine.Size = New Size(307, 179)
         chartLine.TabIndex = 2
         ' 
         ' lblNetWorthDashboard
         ' 
         lblNetWorthDashboard.AutoSize = True
-        lblNetWorthDashboard.Location = New Point(333, 133)
+        lblNetWorthDashboard.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblNetWorthDashboard.ForeColor = Color.White
+        lblNetWorthDashboard.Location = New Point(181, 143)
         lblNetWorthDashboard.Name = "lblNetWorthDashboard"
-        lblNetWorthDashboard.Size = New Size(53, 20)
+        lblNetWorthDashboard.Size = New Size(102, 38)
         lblNetWorthDashboard.TabIndex = 1
         lblNetWorthDashboard.Text = "Label1"
         ' 
         ' flpGoalsDashboard
         ' 
         flpGoalsDashboard.AutoScroll = True
+        flpGoalsDashboard.BackColor = Color.Honeydew
         flpGoalsDashboard.Dock = DockStyle.Top
         flpGoalsDashboard.Location = New Point(0, 0)
         flpGoalsDashboard.Name = "flpGoalsDashboard"
@@ -267,7 +285,7 @@ Partial Class frmMain
         Panel4.Dock = DockStyle.Fill
         Panel4.Location = New Point(627, 3)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(618, 338)
+        Panel4.Size = New Size(618, 377)
         Panel4.TabIndex = 1
         ' 
         ' pnlFilterHeader
@@ -278,34 +296,43 @@ Partial Class frmMain
         pnlFilterHeader.Dock = DockStyle.Top
         pnlFilterHeader.Location = New Point(0, 0)
         pnlFilterHeader.Name = "pnlFilterHeader"
-        pnlFilterHeader.Size = New Size(618, 59)
+        pnlFilterHeader.Size = New Size(618, 40)
         pnlFilterHeader.TabIndex = 2
         ' 
         ' btnFilterInc
         ' 
+        btnFilterInc.AutoSize = True
+        btnFilterInc.Dock = DockStyle.Fill
+        btnFilterInc.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
         btnFilterInc.ForeColor = Color.Green
-        btnFilterInc.Location = New Point(242, 15)
+        btnFilterInc.Location = New Point(182, 0)
         btnFilterInc.Name = "btnFilterInc"
-        btnFilterInc.Size = New Size(94, 29)
+        btnFilterInc.Size = New Size(242, 40)
         btnFilterInc.TabIndex = 1
         btnFilterInc.Text = "▲ Income"
         btnFilterInc.UseVisualStyleBackColor = True
         ' 
         ' btnFilterAll
         ' 
-        btnFilterAll.Location = New Point(77, 15)
+        btnFilterAll.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        btnFilterAll.Dock = DockStyle.Left
+        btnFilterAll.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
+        btnFilterAll.Location = New Point(0, 0)
         btnFilterAll.Name = "btnFilterAll"
-        btnFilterAll.Size = New Size(94, 29)
+        btnFilterAll.Size = New Size(182, 40)
         btnFilterAll.TabIndex = 0
         btnFilterAll.Text = "All"
         btnFilterAll.UseVisualStyleBackColor = True
         ' 
         ' btnFilterExp
         ' 
+        btnFilterExp.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        btnFilterExp.Dock = DockStyle.Right
+        btnFilterExp.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
         btnFilterExp.ForeColor = Color.Red
-        btnFilterExp.Location = New Point(404, 15)
+        btnFilterExp.Location = New Point(424, 0)
         btnFilterExp.Name = "btnFilterExp"
-        btnFilterExp.Size = New Size(94, 29)
+        btnFilterExp.Size = New Size(194, 40)
         btnFilterExp.TabIndex = 2
         btnFilterExp.Text = "▼ Expense"
         btnFilterExp.UseVisualStyleBackColor = True
@@ -313,7 +340,8 @@ Partial Class frmMain
         ' btnViewAllTrans
         ' 
         btnViewAllTrans.Dock = DockStyle.Bottom
-        btnViewAllTrans.Location = New Point(0, 309)
+        btnViewAllTrans.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnViewAllTrans.Location = New Point(0, 348)
         btnViewAllTrans.Name = "btnViewAllTrans"
         btnViewAllTrans.Size = New Size(618, 29)
         btnViewAllTrans.TabIndex = 1
@@ -323,19 +351,21 @@ Partial Class frmMain
         ' flpRecentTrans
         ' 
         flpRecentTrans.AutoScroll = True
+        flpRecentTrans.BackColor = Color.DarkSeaGreen
         flpRecentTrans.Dock = DockStyle.Fill
         flpRecentTrans.FlowDirection = FlowDirection.TopDown
         flpRecentTrans.Location = New Point(0, 0)
         flpRecentTrans.Name = "flpRecentTrans"
-        flpRecentTrans.Size = New Size(618, 338)
+        flpRecentTrans.Size = New Size(618, 377)
         flpRecentTrans.TabIndex = 3
         flpRecentTrans.WrapContents = False
         ' 
         ' flpBudgetDashboard
         ' 
         flpBudgetDashboard.AutoScroll = True
+        flpBudgetDashboard.BackColor = Color.Honeydew
         flpBudgetDashboard.Dock = DockStyle.Top
-        flpBudgetDashboard.Location = New Point(3, 117)
+        flpBudgetDashboard.Location = New Point(3, 78)
         flpBudgetDashboard.Name = "flpBudgetDashboard"
         flpBudgetDashboard.Size = New Size(1248, 130)
         flpBudgetDashboard.TabIndex = 6
@@ -344,10 +374,11 @@ Partial Class frmMain
         ' flpAkun
         ' 
         flpAkun.AutoScroll = True
+        flpAkun.BackColor = Color.Honeydew
         flpAkun.Dock = DockStyle.Top
         flpAkun.Location = New Point(3, 3)
         flpAkun.Name = "flpAkun"
-        flpAkun.Size = New Size(1248, 114)
+        flpAkun.Size = New Size(1248, 75)
         flpAkun.TabIndex = 5
         flpAkun.WrapContents = False
         ' 
@@ -391,7 +422,7 @@ Partial Class frmMain
         ' lblTotalMonth
         ' 
         lblTotalMonth.AutoSize = True
-        lblTotalMonth.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotalMonth.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTotalMonth.Location = New Point(853, 82)
         lblTotalMonth.Name = "lblTotalMonth"
         lblTotalMonth.Size = New Size(78, 20)
@@ -537,14 +568,16 @@ Partial Class frmMain
         menuHapus.Size = New Size(183, 24)
         menuHapus.Text = "Hapus Transaksi"
         ' 
-        ' frmMain
+        ' Budgie
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.Honeydew
         ClientSize = New Size(1262, 673)
         Controls.Add(TabControl1)
         Controls.Add(Panel1)
-        Name = "frmMain"
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        Name = "Budgie"
         Text = "Form1"
         Panel1.ResumeLayout(False)
         TabControl1.ResumeLayout(False)
@@ -554,6 +587,7 @@ Partial Class frmMain
         Panel3.PerformLayout()
         Panel4.ResumeLayout(False)
         pnlFilterHeader.ResumeLayout(False)
+        pnlFilterHeader.PerformLayout()
         TabPage2.ResumeLayout(False)
         pnlHeaderTransaksi.ResumeLayout(False)
         pnlHeaderTransaksi.PerformLayout()
