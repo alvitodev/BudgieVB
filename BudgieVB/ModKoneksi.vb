@@ -6,7 +6,7 @@ Module ModKoneksi
     Public Conn As New MySqlConnection(StrKoneksi)
     Public CMD As MySqlCommand
     Public RD As MySqlDataReader
-    Public CurrentUser_ID As Integer = 0 ' Menyimpan ID user yang login
+    Public CurrentUser_ID As Integer = 1 ' Menyimpan ID user yang login
 
     Public Sub BukaDB()
         Try

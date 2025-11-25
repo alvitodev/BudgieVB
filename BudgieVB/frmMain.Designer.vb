@@ -24,29 +24,52 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Panel1 = New Panel()
         btnLogout = New Button()
-        btnGoals = New Button()
-        btnBudget = New Button()
-        btnTransaksi = New Button()
-        btnDashboard = New Button()
+        btnNavGoals = New Button()
+        btnNavAnggaran = New Button()
+        btnNavTransaksi = New Button()
+        btnNavDashboard = New Button()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        btnAddTransaction = New Button()
+        lblNetWorth = New Label()
         flpRiwayat = New FlowLayoutPanel()
         chartCategory = New ScottPlot.WinForms.FormsPlot()
         chartSpending = New ScottPlot.WinForms.FormsPlot()
         TabPage2 = New TabPage()
-        lblNetWorth = New Label()
+        flpListTransaksi = New FlowLayoutPanel()
+        pnlHeaderTransaksi = New Panel()
+        lblTotalMonth = New Label()
+        lblExpMonth = New Label()
+        lblIncMonth = New Label()
+        lblBulanTahun = New Label()
+        btnNextMonth = New Button()
+        btnPrevMonth = New Button()
+        TabPage3 = New TabPage()
+        flpDaftarBudget = New FlowLayoutPanel()
+        pnlFooterAnggaran = New Panel()
+        btnAddBudget = New Button()
+        TabPage4 = New TabPage()
+        flpDaftarGoal = New FlowLayoutPanel()
+        Panel2 = New Panel()
+        btnAddGoal = New Button()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
+        TabPage2.SuspendLayout()
+        pnlHeaderTransaksi.SuspendLayout()
+        TabPage3.SuspendLayout()
+        pnlFooterAnggaran.SuspendLayout()
+        TabPage4.SuspendLayout()
+        Panel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.Controls.Add(btnLogout)
-        Panel1.Controls.Add(btnGoals)
-        Panel1.Controls.Add(btnBudget)
-        Panel1.Controls.Add(btnTransaksi)
-        Panel1.Controls.Add(btnDashboard)
+        Panel1.Controls.Add(btnNavGoals)
+        Panel1.Controls.Add(btnNavAnggaran)
+        Panel1.Controls.Add(btnNavTransaksi)
+        Panel1.Controls.Add(btnNavDashboard)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
@@ -62,46 +85,48 @@ Partial Class frmMain
         btnLogout.Text = "Logout"
         btnLogout.UseVisualStyleBackColor = True
         ' 
-        ' btnGoals
+        ' btnNavGoals
         ' 
-        btnGoals.Location = New Point(529, 34)
-        btnGoals.Name = "btnGoals"
-        btnGoals.Size = New Size(94, 29)
-        btnGoals.TabIndex = 3
-        btnGoals.Text = "Goals"
-        btnGoals.UseVisualStyleBackColor = True
+        btnNavGoals.Location = New Point(529, 34)
+        btnNavGoals.Name = "btnNavGoals"
+        btnNavGoals.Size = New Size(94, 29)
+        btnNavGoals.TabIndex = 3
+        btnNavGoals.Text = "Goals"
+        btnNavGoals.UseVisualStyleBackColor = True
         ' 
-        ' btnBudget
+        ' btnNavAnggaran
         ' 
-        btnBudget.Location = New Point(377, 34)
-        btnBudget.Name = "btnBudget"
-        btnBudget.Size = New Size(94, 29)
-        btnBudget.TabIndex = 2
-        btnBudget.Text = "Budget"
-        btnBudget.UseVisualStyleBackColor = True
+        btnNavAnggaran.Location = New Point(377, 34)
+        btnNavAnggaran.Name = "btnNavAnggaran"
+        btnNavAnggaran.Size = New Size(94, 29)
+        btnNavAnggaran.TabIndex = 2
+        btnNavAnggaran.Text = "Budget"
+        btnNavAnggaran.UseVisualStyleBackColor = True
         ' 
-        ' btnTransaksi
+        ' btnNavTransaksi
         ' 
-        btnTransaksi.Location = New Point(238, 34)
-        btnTransaksi.Name = "btnTransaksi"
-        btnTransaksi.Size = New Size(94, 29)
-        btnTransaksi.TabIndex = 1
-        btnTransaksi.Text = "Transaksi"
-        btnTransaksi.UseVisualStyleBackColor = True
+        btnNavTransaksi.Location = New Point(238, 34)
+        btnNavTransaksi.Name = "btnNavTransaksi"
+        btnNavTransaksi.Size = New Size(94, 29)
+        btnNavTransaksi.TabIndex = 1
+        btnNavTransaksi.Text = "Transaksi"
+        btnNavTransaksi.UseVisualStyleBackColor = True
         ' 
-        ' btnDashboard
+        ' btnNavDashboard
         ' 
-        btnDashboard.Location = New Point(75, 34)
-        btnDashboard.Name = "btnDashboard"
-        btnDashboard.Size = New Size(94, 29)
-        btnDashboard.TabIndex = 0
-        btnDashboard.Text = "Dashboard"
-        btnDashboard.UseVisualStyleBackColor = True
+        btnNavDashboard.Location = New Point(75, 34)
+        btnNavDashboard.Name = "btnNavDashboard"
+        btnNavDashboard.Size = New Size(94, 29)
+        btnNavDashboard.TabIndex = 0
+        btnNavDashboard.Text = "Dashboard"
+        btnNavDashboard.UseVisualStyleBackColor = True
         ' 
         ' TabControl1
         ' 
         TabControl1.Controls.Add(TabPage1)
         TabControl1.Controls.Add(TabPage2)
+        TabControl1.Controls.Add(TabPage3)
+        TabControl1.Controls.Add(TabPage4)
         TabControl1.Dock = DockStyle.Fill
         TabControl1.Location = New Point(0, 82)
         TabControl1.Name = "TabControl1"
@@ -111,6 +136,7 @@ Partial Class frmMain
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(btnAddTransaction)
         TabPage1.Controls.Add(lblNetWorth)
         TabPage1.Controls.Add(flpRiwayat)
         TabPage1.Controls.Add(chartCategory)
@@ -123,32 +149,58 @@ Partial Class frmMain
         TabPage1.Text = "TabPage1"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' btnAddTransaction
+        ' 
+        btnAddTransaction.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btnAddTransaction.BackColor = Color.CornflowerBlue
+        btnAddTransaction.FlatAppearance.BorderSize = 0
+        btnAddTransaction.FlatStyle = FlatStyle.Flat
+        btnAddTransaction.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAddTransaction.ForeColor = Color.White
+        btnAddTransaction.Location = New Point(1061, 464)
+        btnAddTransaction.Name = "btnAddTransaction"
+        btnAddTransaction.Size = New Size(73, 70)
+        btnAddTransaction.TabIndex = 4
+        btnAddTransaction.Text = "+"
+        btnAddTransaction.UseVisualStyleBackColor = False
+        ' 
+        ' lblNetWorth
+        ' 
+        lblNetWorth.AutoSize = True
+        lblNetWorth.Location = New Point(499, 201)
+        lblNetWorth.Name = "lblNetWorth"
+        lblNetWorth.Size = New Size(73, 20)
+        lblNetWorth.TabIndex = 3
+        lblNetWorth.Text = "NetWorth"
+        ' 
         ' flpRiwayat
         ' 
         flpRiwayat.AutoScroll = True
-        flpRiwayat.Location = New Point(725, 230)
+        flpRiwayat.Location = New Point(638, 139)
         flpRiwayat.Name = "flpRiwayat"
-        flpRiwayat.Size = New Size(250, 125)
+        flpRiwayat.Size = New Size(337, 216)
         flpRiwayat.TabIndex = 2
         ' 
         ' chartCategory
         ' 
         chartCategory.DisplayScale = 1.25F
-        chartCategory.Location = New Point(151, 349)
+        chartCategory.Location = New Point(49, 318)
         chartCategory.Name = "chartCategory"
-        chartCategory.Size = New Size(188, 188)
+        chartCategory.Size = New Size(339, 231)
         chartCategory.TabIndex = 1
         ' 
         ' chartSpending
         ' 
         chartSpending.DisplayScale = 1.25F
-        chartSpending.Location = New Point(140, 121)
+        chartSpending.Location = New Point(37, 48)
         chartSpending.Name = "chartSpending"
-        chartSpending.Size = New Size(188, 188)
+        chartSpending.Size = New Size(369, 232)
         chartSpending.TabIndex = 0
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(flpListTransaksi)
+        TabPage2.Controls.Add(pnlHeaderTransaksi)
         TabPage2.Location = New Point(4, 29)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
@@ -157,18 +209,170 @@ Partial Class frmMain
         TabPage2.Text = "TabPage2"
         TabPage2.UseVisualStyleBackColor = True
         ' 
-        ' lblNetWorth
+        ' flpListTransaksi
         ' 
-        lblNetWorth.AutoSize = True
-        lblNetWorth.Location = New Point(412, 260)
-        lblNetWorth.Name = "lblNetWorth"
-        lblNetWorth.Size = New Size(53, 20)
-        lblNetWorth.TabIndex = 3
-        lblNetWorth.Text = "Label1"
+        flpListTransaksi.AutoScroll = True
+        flpListTransaksi.Dock = DockStyle.Fill
+        flpListTransaksi.FlowDirection = FlowDirection.TopDown
+        flpListTransaksi.Location = New Point(3, 123)
+        flpListTransaksi.Name = "flpListTransaksi"
+        flpListTransaksi.Size = New Size(1164, 441)
+        flpListTransaksi.TabIndex = 1
+        flpListTransaksi.WrapContents = False
+        ' 
+        ' pnlHeaderTransaksi
+        ' 
+        pnlHeaderTransaksi.Controls.Add(lblTotalMonth)
+        pnlHeaderTransaksi.Controls.Add(lblExpMonth)
+        pnlHeaderTransaksi.Controls.Add(lblIncMonth)
+        pnlHeaderTransaksi.Controls.Add(lblBulanTahun)
+        pnlHeaderTransaksi.Controls.Add(btnNextMonth)
+        pnlHeaderTransaksi.Controls.Add(btnPrevMonth)
+        pnlHeaderTransaksi.Dock = DockStyle.Top
+        pnlHeaderTransaksi.Location = New Point(3, 3)
+        pnlHeaderTransaksi.Name = "pnlHeaderTransaksi"
+        pnlHeaderTransaksi.Size = New Size(1164, 120)
+        pnlHeaderTransaksi.TabIndex = 0
+        ' 
+        ' lblTotalMonth
+        ' 
+        lblTotalMonth.AutoSize = True
+        lblTotalMonth.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotalMonth.Location = New Point(614, 93)
+        lblTotalMonth.Name = "lblTotalMonth"
+        lblTotalMonth.Size = New Size(78, 20)
+        lblTotalMonth.TabIndex = 5
+        lblTotalMonth.Text = "Total/Sisa"
+        ' 
+        ' lblExpMonth
+        ' 
+        lblExpMonth.AutoSize = True
+        lblExpMonth.ForeColor = Color.Red
+        lblExpMonth.Location = New Point(423, 90)
+        lblExpMonth.Name = "lblExpMonth"
+        lblExpMonth.Size = New Size(90, 20)
+        lblExpMonth.TabIndex = 4
+        lblExpMonth.Text = "Pengeluaran"
+        ' 
+        ' lblIncMonth
+        ' 
+        lblIncMonth.AutoSize = True
+        lblIncMonth.ForeColor = Color.Green
+        lblIncMonth.Location = New Point(323, 92)
+        lblIncMonth.Name = "lblIncMonth"
+        lblIncMonth.Size = New Size(82, 20)
+        lblIncMonth.TabIndex = 3
+        lblIncMonth.Text = "Pemasukan"
+        ' 
+        ' lblBulanTahun
+        ' 
+        lblBulanTahun.AutoSize = True
+        lblBulanTahun.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblBulanTahun.Location = New Point(446, 49)
+        lblBulanTahun.Name = "lblBulanTahun"
+        lblBulanTahun.Size = New Size(184, 31)
+        lblBulanTahun.TabIndex = 2
+        lblBulanTahun.Text = "November 2025"
+        ' 
+        ' btnNextMonth
+        ' 
+        btnNextMonth.Location = New Point(660, 54)
+        btnNextMonth.Name = "btnNextMonth"
+        btnNextMonth.Size = New Size(94, 29)
+        btnNextMonth.TabIndex = 1
+        btnNextMonth.Text = ">"
+        btnNextMonth.UseVisualStyleBackColor = True
+        ' 
+        ' btnPrevMonth
+        ' 
+        btnPrevMonth.Location = New Point(313, 54)
+        btnPrevMonth.Name = "btnPrevMonth"
+        btnPrevMonth.Size = New Size(94, 29)
+        btnPrevMonth.TabIndex = 0
+        btnPrevMonth.Text = "<"
+        btnPrevMonth.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage3
+        ' 
+        TabPage3.Controls.Add(flpDaftarBudget)
+        TabPage3.Controls.Add(pnlFooterAnggaran)
+        TabPage3.Location = New Point(4, 29)
+        TabPage3.Name = "TabPage3"
+        TabPage3.Padding = New Padding(3)
+        TabPage3.Size = New Size(1170, 567)
+        TabPage3.TabIndex = 2
+        TabPage3.Text = "TabPage3"
+        TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' flpDaftarBudget
+        ' 
+        flpDaftarBudget.AutoScroll = True
+        flpDaftarBudget.Dock = DockStyle.Fill
+        flpDaftarBudget.Location = New Point(3, 3)
+        flpDaftarBudget.Name = "flpDaftarBudget"
+        flpDaftarBudget.Size = New Size(1164, 501)
+        flpDaftarBudget.TabIndex = 1
+        ' 
+        ' pnlFooterAnggaran
+        ' 
+        pnlFooterAnggaran.Controls.Add(btnAddBudget)
+        pnlFooterAnggaran.Dock = DockStyle.Bottom
+        pnlFooterAnggaran.Location = New Point(3, 504)
+        pnlFooterAnggaran.Name = "pnlFooterAnggaran"
+        pnlFooterAnggaran.Size = New Size(1164, 60)
+        pnlFooterAnggaran.TabIndex = 0
+        ' 
+        ' btnAddBudget
+        ' 
+        btnAddBudget.Location = New Point(450, 26)
+        btnAddBudget.Name = "btnAddBudget"
+        btnAddBudget.Size = New Size(94, 29)
+        btnAddBudget.TabIndex = 0
+        btnAddBudget.Text = "+ Budget"
+        btnAddBudget.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage4
+        ' 
+        TabPage4.Controls.Add(flpDaftarGoal)
+        TabPage4.Controls.Add(Panel2)
+        TabPage4.Location = New Point(4, 29)
+        TabPage4.Name = "TabPage4"
+        TabPage4.Padding = New Padding(3)
+        TabPage4.Size = New Size(1170, 567)
+        TabPage4.TabIndex = 3
+        TabPage4.Text = "TabPage4"
+        TabPage4.UseVisualStyleBackColor = True
+        ' 
+        ' flpDaftarGoal
+        ' 
+        flpDaftarGoal.AutoScroll = True
+        flpDaftarGoal.Dock = DockStyle.Fill
+        flpDaftarGoal.Location = New Point(3, 3)
+        flpDaftarGoal.Name = "flpDaftarGoal"
+        flpDaftarGoal.Size = New Size(1164, 501)
+        flpDaftarGoal.TabIndex = 1
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(btnAddGoal)
+        Panel2.Dock = DockStyle.Bottom
+        Panel2.Location = New Point(3, 504)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(1164, 60)
+        Panel2.TabIndex = 0
+        ' 
+        ' btnAddGoal
+        ' 
+        btnAddGoal.Location = New Point(422, 13)
+        btnAddGoal.Name = "btnAddGoal"
+        btnAddGoal.Size = New Size(94, 29)
+        btnAddGoal.TabIndex = 1
+        btnAddGoal.Text = "+ Goal"
+        btnAddGoal.UseVisualStyleBackColor = True
         ' 
         ' frmMain
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1178, 682)
         Controls.Add(TabControl1)
@@ -179,15 +383,22 @@ Partial Class frmMain
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
+        TabPage2.ResumeLayout(False)
+        pnlHeaderTransaksi.ResumeLayout(False)
+        pnlHeaderTransaksi.PerformLayout()
+        TabPage3.ResumeLayout(False)
+        pnlFooterAnggaran.ResumeLayout(False)
+        TabPage4.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnLogout As Button
-    Friend WithEvents btnGoals As Button
-    Friend WithEvents btnBudget As Button
-    Friend WithEvents btnTransaksi As Button
-    Friend WithEvents btnDashboard As Button
+    Friend WithEvents btnNavGoals As Button
+    Friend WithEvents btnNavAnggaran As Button
+    Friend WithEvents btnNavTransaksi As Button
+    Friend WithEvents btnNavDashboard As Button
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents chartSpending As ScottPlot.WinForms.FormsPlot
@@ -195,5 +406,22 @@ Partial Class frmMain
     Friend WithEvents flpRiwayat As FlowLayoutPanel
     Friend WithEvents chartCategory As ScottPlot.WinForms.FormsPlot
     Friend WithEvents lblNetWorth As Label
+    Friend WithEvents btnAddTransaction As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents flpDaftarBudget As FlowLayoutPanel
+    Friend WithEvents pnlFooterAnggaran As Panel
+    Friend WithEvents btnAddBudget As Button
+    Friend WithEvents flpDaftarGoal As FlowLayoutPanel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents btnAddGoal As Button
+    Friend WithEvents flpListTransaksi As FlowLayoutPanel
+    Friend WithEvents pnlHeaderTransaksi As Panel
+    Friend WithEvents lblTotalMonth As Label
+    Friend WithEvents lblExpMonth As Label
+    Friend WithEvents lblIncMonth As Label
+    Friend WithEvents lblBulanTahun As Label
+    Friend WithEvents btnNextMonth As Button
+    Friend WithEvents btnPrevMonth As Button
 
 End Class

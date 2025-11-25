@@ -24,26 +24,31 @@ Partial Class frmAddTransaction
     Private Sub InitializeComponent()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
-        TabPage2 = New TabPage()
-        TabPage3 = New TabPage()
-        txtJudul = New TextBox()
-        dtpTanggal = New DateTimePicker()
         btnNext1 = New Button()
-        btnNext2 = New Button()
+        dtpTanggal = New DateTimePicker()
+        txtJudul = New TextBox()
+        TabPage2 = New TabPage()
+        cmbGoal = New ComboBox()
+        cmbBudget = New ComboBox()
         flpCategories = New FlowLayoutPanel()
-        lblNominalDisplay = New Label()
-        btnAngka0 = New Button()
-        btnAngka1 = New Button()
-        btnAngka2 = New Button()
-        btnAngka3 = New Button()
-        btnAngka4 = New Button()
-        btnAngka5 = New Button()
-        btnAngka6 = New Button()
-        btnAngka7 = New Button()
-        btnAngka8 = New Button()
-        btnAngka9 = New Button()
-        btnSimpan = New Button()
+        btnNext2 = New Button()
+        TabPage3 = New TabPage()
+        btnBackspace = New Button()
         cmbAkun = New ComboBox()
+        btnSimpan = New Button()
+        btnAngka9 = New Button()
+        btnAngka8 = New Button()
+        btnAngka7 = New Button()
+        btnAngka6 = New Button()
+        btnAngka5 = New Button()
+        btnAngka4 = New Button()
+        btnAngka3 = New Button()
+        btnAngka2 = New Button()
+        btnAngka1 = New Button()
+        btnAngka0 = New Button()
+        lblNominalDisplay = New Label()
+        btnModeExpense = New Button()
+        btnModeIncome = New Button()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabPage2.SuspendLayout()
@@ -75,8 +80,35 @@ Partial Class frmAddTransaction
         TabPage1.Text = "TabPage1"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' btnNext1
+        ' 
+        btnNext1.Location = New Point(313, 313)
+        btnNext1.Name = "btnNext1"
+        btnNext1.Size = New Size(94, 29)
+        btnNext1.TabIndex = 2
+        btnNext1.Text = "Button1"
+        btnNext1.UseVisualStyleBackColor = True
+        ' 
+        ' dtpTanggal
+        ' 
+        dtpTanggal.Location = New Point(295, 24)
+        dtpTanggal.Name = "dtpTanggal"
+        dtpTanggal.Size = New Size(250, 27)
+        dtpTanggal.TabIndex = 1
+        ' 
+        ' txtJudul
+        ' 
+        txtJudul.Location = New Point(257, 198)
+        txtJudul.Name = "txtJudul"
+        txtJudul.Size = New Size(125, 27)
+        txtJudul.TabIndex = 0
+        ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(btnModeIncome)
+        TabPage2.Controls.Add(btnModeExpense)
+        TabPage2.Controls.Add(cmbGoal)
+        TabPage2.Controls.Add(cmbBudget)
         TabPage2.Controls.Add(flpCategories)
         TabPage2.Controls.Add(btnNext2)
         TabPage2.Location = New Point(4, 29)
@@ -87,8 +119,43 @@ Partial Class frmAddTransaction
         TabPage2.Text = "TabPage2"
         TabPage2.UseVisualStyleBackColor = True
         ' 
+        ' cmbGoal
+        ' 
+        cmbGoal.FormattingEnabled = True
+        cmbGoal.Location = New Point(248, 349)
+        cmbGoal.Name = "cmbGoal"
+        cmbGoal.Size = New Size(151, 28)
+        cmbGoal.TabIndex = 6
+        cmbGoal.Text = "Pilih Goal (Opsional)"
+        ' 
+        ' cmbBudget
+        ' 
+        cmbBudget.DropDownStyle = ComboBoxStyle.DropDownList
+        cmbBudget.FormattingEnabled = True
+        cmbBudget.Location = New Point(247, 281)
+        cmbBudget.Name = "cmbBudget"
+        cmbBudget.Size = New Size(189, 28)
+        cmbBudget.TabIndex = 5
+        ' 
+        ' flpCategories
+        ' 
+        flpCategories.Location = New Point(171, 90)
+        flpCategories.Name = "flpCategories"
+        flpCategories.Size = New Size(250, 125)
+        flpCategories.TabIndex = 4
+        ' 
+        ' btnNext2
+        ' 
+        btnNext2.Location = New Point(515, 246)
+        btnNext2.Name = "btnNext2"
+        btnNext2.Size = New Size(94, 29)
+        btnNext2.TabIndex = 3
+        btnNext2.Text = "Button1"
+        btnNext2.UseVisualStyleBackColor = True
+        ' 
         ' TabPage3
         ' 
+        TabPage3.Controls.Add(btnBackspace)
         TabPage3.Controls.Add(cmbAkun)
         TabPage3.Controls.Add(btnSimpan)
         TabPage3.Controls.Add(btnAngka9)
@@ -110,152 +177,14 @@ Partial Class frmAddTransaction
         TabPage3.Text = "TabPage3"
         TabPage3.UseVisualStyleBackColor = True
         ' 
-        ' txtJudul
+        ' btnBackspace
         ' 
-        txtJudul.Location = New Point(239, 117)
-        txtJudul.Name = "txtJudul"
-        txtJudul.Size = New Size(125, 27)
-        txtJudul.TabIndex = 0
-        ' 
-        ' dtpTanggal
-        ' 
-        dtpTanggal.Location = New Point(472, 107)
-        dtpTanggal.Name = "dtpTanggal"
-        dtpTanggal.Size = New Size(250, 27)
-        dtpTanggal.TabIndex = 1
-        ' 
-        ' btnNext1
-        ' 
-        btnNext1.Location = New Point(468, 264)
-        btnNext1.Name = "btnNext1"
-        btnNext1.Size = New Size(94, 29)
-        btnNext1.TabIndex = 2
-        btnNext1.Text = "Button1"
-        btnNext1.UseVisualStyleBackColor = True
-        ' 
-        ' btnNext2
-        ' 
-        btnNext2.Location = New Point(515, 246)
-        btnNext2.Name = "btnNext2"
-        btnNext2.Size = New Size(94, 29)
-        btnNext2.TabIndex = 3
-        btnNext2.Text = "Button1"
-        btnNext2.UseVisualStyleBackColor = True
-        ' 
-        ' flpCategories
-        ' 
-        flpCategories.Location = New Point(171, 90)
-        flpCategories.Name = "flpCategories"
-        flpCategories.Size = New Size(250, 125)
-        flpCategories.TabIndex = 4
-        ' 
-        ' lblNominalDisplay
-        ' 
-        lblNominalDisplay.AutoSize = True
-        lblNominalDisplay.Location = New Point(242, 112)
-        lblNominalDisplay.Name = "lblNominalDisplay"
-        lblNominalDisplay.Size = New Size(53, 20)
-        lblNominalDisplay.TabIndex = 0
-        lblNominalDisplay.Text = "Label1"
-        ' 
-        ' btnAngka0
-        ' 
-        btnAngka0.Location = New Point(316, 338)
-        btnAngka0.Name = "btnAngka0"
-        btnAngka0.Size = New Size(94, 29)
-        btnAngka0.TabIndex = 1
-        btnAngka0.Text = "Button1"
-        btnAngka0.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka1
-        ' 
-        btnAngka1.Location = New Point(201, 190)
-        btnAngka1.Name = "btnAngka1"
-        btnAngka1.Size = New Size(94, 29)
-        btnAngka1.TabIndex = 2
-        btnAngka1.Text = "Button1"
-        btnAngka1.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka2
-        ' 
-        btnAngka2.Location = New Point(316, 190)
-        btnAngka2.Name = "btnAngka2"
-        btnAngka2.Size = New Size(94, 29)
-        btnAngka2.TabIndex = 3
-        btnAngka2.Text = "Button1"
-        btnAngka2.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka3
-        ' 
-        btnAngka3.Location = New Point(429, 190)
-        btnAngka3.Name = "btnAngka3"
-        btnAngka3.Size = New Size(94, 29)
-        btnAngka3.TabIndex = 4
-        btnAngka3.Text = "Button1"
-        btnAngka3.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka4
-        ' 
-        btnAngka4.Location = New Point(201, 240)
-        btnAngka4.Name = "btnAngka4"
-        btnAngka4.Size = New Size(94, 29)
-        btnAngka4.TabIndex = 5
-        btnAngka4.Text = "Button1"
-        btnAngka4.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka5
-        ' 
-        btnAngka5.Location = New Point(316, 240)
-        btnAngka5.Name = "btnAngka5"
-        btnAngka5.Size = New Size(94, 29)
-        btnAngka5.TabIndex = 6
-        btnAngka5.Text = "Button1"
-        btnAngka5.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka6
-        ' 
-        btnAngka6.Location = New Point(429, 240)
-        btnAngka6.Name = "btnAngka6"
-        btnAngka6.Size = New Size(94, 29)
-        btnAngka6.TabIndex = 7
-        btnAngka6.Text = "Button1"
-        btnAngka6.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka7
-        ' 
-        btnAngka7.Location = New Point(201, 286)
-        btnAngka7.Name = "btnAngka7"
-        btnAngka7.Size = New Size(94, 29)
-        btnAngka7.TabIndex = 8
-        btnAngka7.Text = "Button1"
-        btnAngka7.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka8
-        ' 
-        btnAngka8.Location = New Point(316, 286)
-        btnAngka8.Name = "btnAngka8"
-        btnAngka8.Size = New Size(94, 29)
-        btnAngka8.TabIndex = 9
-        btnAngka8.Text = "Button1"
-        btnAngka8.UseVisualStyleBackColor = True
-        ' 
-        ' btnAngka9
-        ' 
-        btnAngka9.Location = New Point(429, 286)
-        btnAngka9.Name = "btnAngka9"
-        btnAngka9.Size = New Size(94, 29)
-        btnAngka9.TabIndex = 10
-        btnAngka9.Text = "Button1"
-        btnAngka9.UseVisualStyleBackColor = True
-        ' 
-        ' btnSimpan
-        ' 
-        btnSimpan.Location = New Point(681, 371)
-        btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(94, 29)
-        btnSimpan.TabIndex = 11
-        btnSimpan.Text = "Button1"
-        btnSimpan.UseVisualStyleBackColor = True
+        btnBackspace.Location = New Point(429, 338)
+        btnBackspace.Name = "btnBackspace"
+        btnBackspace.Size = New Size(94, 29)
+        btnBackspace.TabIndex = 13
+        btnBackspace.Text = "Backspace"
+        btnBackspace.UseVisualStyleBackColor = True
         ' 
         ' cmbAkun
         ' 
@@ -264,6 +193,136 @@ Partial Class frmAddTransaction
         cmbAkun.Name = "cmbAkun"
         cmbAkun.Size = New Size(151, 28)
         cmbAkun.TabIndex = 12
+        ' 
+        ' btnSimpan
+        ' 
+        btnSimpan.Location = New Point(681, 371)
+        btnSimpan.Name = "btnSimpan"
+        btnSimpan.Size = New Size(94, 29)
+        btnSimpan.TabIndex = 11
+        btnSimpan.Text = "Simpan"
+        btnSimpan.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka9
+        ' 
+        btnAngka9.Location = New Point(429, 286)
+        btnAngka9.Name = "btnAngka9"
+        btnAngka9.Size = New Size(94, 29)
+        btnAngka9.TabIndex = 10
+        btnAngka9.Text = "9"
+        btnAngka9.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka8
+        ' 
+        btnAngka8.Location = New Point(316, 286)
+        btnAngka8.Name = "btnAngka8"
+        btnAngka8.Size = New Size(94, 29)
+        btnAngka8.TabIndex = 9
+        btnAngka8.Text = "8"
+        btnAngka8.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka7
+        ' 
+        btnAngka7.Location = New Point(201, 286)
+        btnAngka7.Name = "btnAngka7"
+        btnAngka7.Size = New Size(94, 29)
+        btnAngka7.TabIndex = 8
+        btnAngka7.Text = "7"
+        btnAngka7.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka6
+        ' 
+        btnAngka6.Location = New Point(429, 240)
+        btnAngka6.Name = "btnAngka6"
+        btnAngka6.Size = New Size(94, 29)
+        btnAngka6.TabIndex = 7
+        btnAngka6.Text = "6"
+        btnAngka6.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka5
+        ' 
+        btnAngka5.Location = New Point(316, 240)
+        btnAngka5.Name = "btnAngka5"
+        btnAngka5.Size = New Size(94, 29)
+        btnAngka5.TabIndex = 6
+        btnAngka5.Text = "5"
+        btnAngka5.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka4
+        ' 
+        btnAngka4.Location = New Point(201, 240)
+        btnAngka4.Name = "btnAngka4"
+        btnAngka4.Size = New Size(94, 29)
+        btnAngka4.TabIndex = 5
+        btnAngka4.Text = "4"
+        btnAngka4.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka3
+        ' 
+        btnAngka3.Location = New Point(429, 190)
+        btnAngka3.Name = "btnAngka3"
+        btnAngka3.Size = New Size(94, 29)
+        btnAngka3.TabIndex = 4
+        btnAngka3.Text = "3"
+        btnAngka3.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka2
+        ' 
+        btnAngka2.Location = New Point(316, 190)
+        btnAngka2.Name = "btnAngka2"
+        btnAngka2.Size = New Size(94, 29)
+        btnAngka2.TabIndex = 3
+        btnAngka2.Text = "2"
+        btnAngka2.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka1
+        ' 
+        btnAngka1.Location = New Point(201, 190)
+        btnAngka1.Name = "btnAngka1"
+        btnAngka1.Size = New Size(94, 29)
+        btnAngka1.TabIndex = 2
+        btnAngka1.Text = "1"
+        btnAngka1.UseVisualStyleBackColor = True
+        ' 
+        ' btnAngka0
+        ' 
+        btnAngka0.Location = New Point(316, 338)
+        btnAngka0.Name = "btnAngka0"
+        btnAngka0.Size = New Size(94, 29)
+        btnAngka0.TabIndex = 1
+        btnAngka0.Text = "0"
+        btnAngka0.UseVisualStyleBackColor = True
+        ' 
+        ' lblNominalDisplay
+        ' 
+        lblNominalDisplay.AutoSize = True
+        lblNominalDisplay.Location = New Point(242, 112)
+        lblNominalDisplay.Name = "lblNominalDisplay"
+        lblNominalDisplay.Size = New Size(25, 20)
+        lblNominalDisplay.TabIndex = 0
+        lblNominalDisplay.Text = "67"
+        ' 
+        ' btnModeExpense
+        ' 
+        btnModeExpense.BackColor = Color.Salmon
+        btnModeExpense.FlatStyle = FlatStyle.Flat
+        btnModeExpense.Location = New Point(37, 238)
+        btnModeExpense.Name = "btnModeExpense"
+        btnModeExpense.Size = New Size(94, 29)
+        btnModeExpense.TabIndex = 7
+        btnModeExpense.Text = "Expense"
+        btnModeExpense.UseVisualStyleBackColor = False
+        ' 
+        ' btnModeIncome
+        ' 
+        btnModeIncome.BackColor = Color.WhiteSmoke
+        btnModeIncome.FlatStyle = FlatStyle.Flat
+        btnModeIncome.Location = New Point(205, 238)
+        btnModeIncome.Name = "btnModeIncome"
+        btnModeIncome.Size = New Size(94, 29)
+        btnModeIncome.TabIndex = 8
+        btnModeIncome.Text = "Income"
+        btnModeIncome.UseVisualStyleBackColor = False
         ' 
         ' frmAddTransaction
         ' 
@@ -304,4 +363,9 @@ Partial Class frmAddTransaction
     Friend WithEvents btnAngka1 As Button
     Friend WithEvents btnAngka0 As Button
     Friend WithEvents lblNominalDisplay As Label
+    Friend WithEvents btnBackspace As Button
+    Friend WithEvents cmbBudget As ComboBox
+    Friend WithEvents cmbGoal As ComboBox
+    Friend WithEvents btnModeIncome As Button
+    Friend WithEvents btnModeExpense As Button
 End Class
