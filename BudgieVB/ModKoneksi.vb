@@ -15,4 +15,17 @@ Module ModKoneksi
             MsgBox("Gagal koneksi: " & ex.Message)
         End Try
     End Sub
+    ' Fungsi untuk mengubah password jadi kode acak (Enkripsi MD5)
+    Public Function GetMD5(ByVal text As String) As String
+        Using md5 As System.Security.Cryptography.MD5 = System.Security.Cryptography.MD5.Create()
+            Dim bytes As Byte() = System.Text.Encoding.ASCII.GetBytes(text)
+            Dim hash As Byte() = md5.ComputeHash(bytes)
+
+            Dim sb As New System.Text.StringBuilder()
+            For i As Integer = 0 To hash.Length - 1
+                sb.Append(hash(i).ToString("X2"))
+            Next
+            Return sb.ToString()
+        End Using
+    End Function
 End Module
